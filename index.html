@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Product Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://your-profile-picture-url.jpg" alt="Your Profile" class="profile-pic">
+                <h1>Your Name</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="logo-large">
+            <h1>Your Name</h1>
+        </div>
+        <div class="hero-text">
+            <h2>Product | Strategy | Finance | Data</h2>
+            <p>A generalist with 3+ years of work experience in product management & strategy. I am a dynamic problem-solver with a knack for first-principles thinking, ready to scale and enhance any team with an analytical approach.</p>
+        </div>
+    </section>
+    
+    <!-- Note: You'll need to add an image file named "banner.jpg" to your images folder -->
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="experience">
+            <div class="experience-item">
+                <i class="fas fa-briefcase"></i>
+                <h3>Product Manager at Current Company</h3>
+                <p>Jan 2022 - Present</p>
+            </div>
+            <div class="experience-item">
+                <i class="fas fa-briefcase"></i>
+                <h3>Associate Product Manager at Previous Company</h3>
+                <p>Apr 2020 - Dec 2021</p>
+            </div>
+            <div class="experience-item">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Master of Business Administration</h3>
+                <p>University Name, Class of 2020</p>
+            </div>
+            <div class="experience-item">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Bachelor of Technology</h3>
+                <p>University Name, Class of 2018</p>
+            </div>
+        </div>
+
+        <div class="value-prop">
+            <h3>Are you looking to take your business to the next level?</h3>
+            <p>Here's what I bring to the table:</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> A strong bias to action</li>
+                <li><i class="fas fa-check-circle"></i> Problem solving by tackling issues head-on</li>
+                <li><i class="fas fa-check-circle"></i> Data driven decision making</li>
+                <li><i class="fas fa-check-circle"></i> Wearing multiple hats with 'whatever it takes' attitude</li>
+                <li><i class="fas fa-check-circle"></i> Cross-functional leadership</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Here's my portfolio of projects in Product, Strategy, Finance and Data Analysis</h2>
+        
+        <div class="category-tabs">
+            <button class="tab active" data-category="product">Product</button>
+            <button class="tab" data-category="strategy">Strategy</button>
+            <button class="tab" data-category="data">Data Analysis</button>
+            <button class="tab" data-category="finance">Finance</button>
+        </div>
+
+        <div class="projects-container">
+            <!-- Product Projects -->
+            <div class="category-projects active" id="product-projects">
+                <div class="project-card">
+                    <img src="images/project1.jpg" alt="UI/UX Design Project">
+                    <div class="project-info">
+                        <h3>UI/UX Design Project</h3>
+                        <div class="tags">
+                            <span>UI Design</span>
+                            <span>Figma</span>
+                            <span>User Research</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Product Discovery">
+                    <div class="project-info">
+                        <h3>Product Discovery Framework</h3>
+                        <div class="tags">
+                            <span>User Interviews</span>
+                            <span>Jobs-To-Be-Done</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project3.jpg" alt="Agile Development">
+                    <div class="project-info">
+                        <h3>Agile Development Project</h3>
+                        <div class="tags">
+                            <span>Scrum</span>
+                            <span>User Stories</span>
+                            <span>Sprint Planning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy Projects -->
+            <div class="category-projects" id="strategy-projects">
+                <div class="project-card">
+                    <img src="images/strategy1.jpg" alt="Business Strategy">
+                    <div class="project-info">
+                        <h3>Growth Strategy for Enterprise SaaS</h3>
+                        <div class="tags">
+                            <span>SWOT</span>
+                            <span>PESTLE</span>
+                            <span>Market Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/strategy2.jpg" alt="Innovation Strategy">
+                    <div class="project-info">
+                        <h3>Innovation Framework</h3>
+                        <div class="tags">
+                            <span>Strategic Thinking</span>
+                            <span>Framework Creation</span>
+                            <span>Implementation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analysis Projects -->
+            <div class="category-projects" id="data-projects">
+                <div class="project-card">
+                    <img src="images/data1.jpg" alt="Data Visualization">
+                    <div class="project-info">
+                        <h3>Customer Insights Dashboard</h3>
+                        <div class="tags">
+                            <span>Tableau</span>
+                            <span>Data Analysis</span>
+                            <span>Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/data2.jpg" alt="Analytics Project">
+                    <div class="project-info">
+                        <h3>Conversion Funnel Optimization</h3>
+                        <div class="tags">
+                            <span>Google Analytics</span>
+                            <span>A/B Testing</span>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finance Projects -->
+            <div class="category-projects" id="finance-projects">
+                <div class="project-card">
+                    <img src="images/finance1.jpg" alt="Financial Analysis">
+                    <div class="project-info">
+                        <h3>SaaS Unit Economics Model</h3>
+                        <div class="tags">
+                            <span>Financial Modeling</span>
+                            <span>CAC/LTV Analysis</span>
+                            <span>Forecasting</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/finance2.jpg" alt="Business Case">
+                    <div class="project-info">
+                        <h3>New Market Entry Financial Analysis</h3>
+                        <div class="tags">
+                            <span>ROI Calculation</span>
+                            <span>Market Sizing</span>
+                            <span>Risk Assessment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Product Management</h3>
+                <div class="skill-items">
+                    <span>User Research</span>
+                    <span>Product Strategy</span>
+                    <span>Roadmapping</span>
+                    <span>User Stories</span>
+                    <span>MVP Development</span>
+                    <span>Product Analytics</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Technical</h3>
+                <div class="skill-items">
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>Tableau</span>
+                    <span>Figma</span>
+                    <span>HTML/CSS</span>
+                    <span>API Understanding</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Business</h3>
+                <div class="skill-items">
+                    <span>Market Research</span>
+                    <span>Competitive Analysis</span>
+                    <span>Financial Modeling</span>
+                    <span>Business Strategy</span>
+                    <span>Stakeholder Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies" class="case-studies">
+        <h2>Case Studies</h2>
+        <div class="case-studies-container">
+            <div class="case-study-card">
+                <img src="images/case1.jpg" alt="Case Study 1">
+                <h3>E-commerce User Experience Redesign</h3>
+                <a href="#" class="case-study-link">View Case Study</a>
+            </div>
+            <div class="case-study-card">
+                <img src="images/case2.jpg" alt="Case Study 2">
+                <h3>SaaS Product Market Fit Journey</h3>
+                <a href="#" class="case-study-link">View Case Study</a>
+            </div>
+            <div class="case-study-card">
+                <img src="images/case3.jpg" alt="Case Study 3">
+                <h3>Data-Driven Feature Prioritization</h3>
+                <a href="#" class="case-study-link">View Case Study</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Chat with me!</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Your question" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

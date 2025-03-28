@@ -48,10 +48,33 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             
-            // Here you would typically send the form data to a server
-            // For GitHub Pages, you might use a service like Formspree
+            // For GitHub Pages, you would typically use a service like Formspree
+            // Example: https://formspree.io/
+            // Here's how you might set it up:
             
-            // For now, let's just show a success message
+            // const formData = new FormData();
+            // formData.append('name', name);
+            // formData.append('email', email);
+            // formData.append('message', message);
+            
+            // fetch('https://formspree.io/f/yourformid', {
+            //     method: 'POST',
+            //     body: formData,
+            //     headers: {
+            //         'Accept': 'application/json'
+            //     }
+            // }).then(response => {
+            //     if (response.ok) {
+            //         alert(`Thanks ${name}! Your message has been sent. I'll get back to you soon.`);
+            //         contactForm.reset();
+            //     } else {
+            //         alert('Oops! There was a problem sending your message.');
+            //     }
+            // }).catch(error => {
+            //     alert('Oops! There was a problem sending your message.');
+            // });
+            
+            // For now, just show a success message
             alert(`Thanks ${name}! Your message has been sent. I'll get back to you soon.`);
             contactForm.reset();
         });
@@ -85,25 +108,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
     
-    // Dark/Light mode toggle functionality (optional)
-    // You can add a button in the header and uncomment this code
-    /*
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            
-            // Save preference to localStorage
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode);
-        });
+    // Typing effect for hero section (optional)
+    const heroText = document.querySelector('.hero-text h2');
+    if (heroText) {
+        const text = heroText.textContent;
+        heroText.textContent = '';
         
-        // Check for saved user preference
-        const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-        if (savedDarkMode) {
-            document.body.classList.add('dark-mode');
-        }
+        let i = 0;
+        const typeWriter = function() {
+            if (i < text.length) {
+                heroText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        // Uncomment to enable typing effect
+        // typeWriter();
     }
-    */
-});
+    
+    // Add current year to footer copyright
+    const yearSpan = document.querySelector('.footer-content p');
+    if (yearSpan) {
+        const currentYear = new Date().getFullYear();
+        yearSpan.innerHTML = `&copy; ${currentYear} Kunal Pingale. All rights reserved.`;
+    }
+    
+    // Add GitHub Pages form compatibility
+    // Since GitHub Pages doesn't process server-side code, you can use a third-party service
+    // For example, you can use FormSpree (https://formspree.io/)
+    // This requires adding your FormSpree endpoint to the form's action attribute
+}

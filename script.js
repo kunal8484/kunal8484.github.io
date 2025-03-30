@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Tab functionality for portfolio section
-    const tabs = document.querySelectorAll('.tab');
-    const categoryProjects = document.querySelectorAll('.category-projects');
+    // Portfolio Tab Navigation
+    const tabs = document.querySelectorAll('.portfolio-tabs .tab');
+    const tabContents = document.querySelectorAll('.tab-content');
     
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
@@ -11,131 +11,98 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked tab
             this.classList.add('active');
             
-            // Hide all category projects
-            categoryProjects.forEach(category => {
-                category.classList.remove('active');
+            // Hide all tab contents
+            tabContents.forEach(content => {
+                content.classList.remove('active');
             });
             
-            // Show the selected category projects
-            const category = this.getAttribute('data-category');
-            document.getElementById(`${category}-projects`).classList.add('active');
+            // Show the corresponding tab content
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(`${tabId}-content`).classList.add('active');
         });
     });
     
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetSection.offsetTop - 70,
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Contact form submission
-    const contactForm = document.getElementById('contact-form');
-    
+    // Form Submission
+    const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            const formElements = this.elements;
+            const name = formElements[0].value;
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            // Here you would typically send the form data to a server
+            // For GitHub Pages, you might use Formspree or a similar service
             
-            // For GitHub Pages, you would typically use a service like Formspree
-            // Example: https://formspree.io/
-            // Here's how you might set it up:
-            
-            // const formData = new FormData();
-            // formData.append('name', name);
-            // formData.append('email', email);
-            // formData.append('message', message);
-            
-            // fetch('https://formspree.io/f/yourformid', {
-            //     method: 'POST',
-            //     body: formData,
-            //     headers: {
-            //         'Accept': 'application/json'
-            //     }
-            // }).then(response => {
-            //     if (response.ok) {
-            //         alert(`Thanks ${name}! Your message has been sent. I'll get back to you soon.`);
-            //         contactForm.reset();
-            //     } else {
-            //         alert('Oops! There was a problem sending your message.');
-            //     }
-            // }).catch(error => {
-            //     alert('Oops! There was a problem sending your message.');
-            // });
-            
-            // For now, just show a success message
+            // Show success message
             alert(`Thanks ${name}! Your message has been sent. I'll get back to you soon.`);
-            contactForm.reset();
+            this.reset();
         });
     }
     
-    // Add animation on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.project-card, .experience-item, .case-study-card');
-        
-        elements.forEach(element => {
-            const position = element.getBoundingClientRect();
+    // Smooth Scroll for Internal Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            // If element is in viewport
-            if (position.top < window.innerHeight && position.bottom >= 0) {
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Add Animation on Scroll
+    const animateElements = document.querySelectorAll('.project-card, .case-study-card, .experience-item');
+    
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Function to animate elements in viewport
+    function animateOnScroll() {
+        animateElements.forEach(element => {
+            if (isInViewport(element)) {
                 element.style.opacity = '1';
                 element.style.transform = 'translateY(0)';
             }
         });
-    };
+    }
     
-    // Initial state for animations
-    document.querySelectorAll('.project-card, .experience-item, .case-study-card').forEach(element => {
+    // Set initial state
+    animateElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     });
     
-    // Run on page load
+    // Run on initial load
     animateOnScroll();
     
     // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
     
-    // Typing effect for hero section (optional)
-    const heroText = document.querySelector('.hero-text h2');
-    if (heroText) {
-        const text = heroText.textContent;
-        heroText.textContent = '';
-        
-        let i = 0;
-        const typeWriter = function() {
-            if (i < text.length) {
-                heroText.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        // Uncomment to enable typing effect
-        // typeWriter();
-    }
+    // Notion-like features
     
-    // Add current year to footer copyright
-    const yearSpan = document.querySelector('.footer-content p');
-    if (yearSpan) {
-        const currentYear = new Date().getFullYear();
-        yearSpan.innerHTML = `&copy; ${currentYear} Kunal Pingale. All rights reserved.`;
-    }
+    // 1. Hover effect on navigation items
+    const navItems = document.querySelectorAll('.search i, .actions i');
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.color = '#ffffff';
+        });
+        item.addEventListener('mouseleave', function() {
+            this.style.color = '';
+        });
+    });
     
-    // Add GitHub Pages form compatibility
-    // Since GitHub Pages doesn't process server-side code, you can use a third-party service
-    // For example, you can use FormSpree (https://formspree.io/)
-    // This requires adding your FormSpree endpoint to the form's action attribute
-}
+    // 2. Current year in footer (if needed)
+    const

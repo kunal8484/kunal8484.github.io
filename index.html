@@ -1,363 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunal Pingale - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kunal Pingale Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">
-                <h1>Hey, I'm Kunal</h1>
-            </div>
-            <div class="search-and-actions">
-                <div class="search">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="actions">
-                    <i class="far fa-copy"></i>
-                    <i class="fas fa-ellipsis-h"></i>
-                </div>
-            </div>
-        </div>
-    </header>
+  <header class="banner">
+    <img src="your-banner-image.jpg" alt="Banner" class="banner-img">
+    <div class="header-text">
+      <h1>Hey, I’m Kunal</h1>
+      <p><strong>Product | Strategy | Data | Finance</strong></p>
+      <p>A tech-driven problem solver passionate about innovation, analytics, and product strategy. With a sharp eye for system optimization and over 2 years of cross-functional experience, I bring a data-centric mindset to every challenge.</p>
+    </div>
+  </header>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="university-logo">
-                <img src="images/umass-logo.png" alt="UMass Logo">
-                <h2>UNIVERSITY OF MASSACHUSETTS</h2>
-            </div>
-            <h1>Product | Strategy | Finance | Data</h1>
-        </div>
-    </section>
+  <section class="about">
+    <h2>About Me</h2>
+    <ul>
+      <li>💼 Web Developer Intern at Elite Software</li>
+      <li>💼 AI/ML Intern at Bitmap Technology</li>
+      <li>🎓 Master of Engineering Management, UMass Amherst (Class of 2026)</li>
+      <li>💼 Ex-Coordinator at Startup & Innovation Cell</li>
+    </ul>
+  </section>
 
-    <!-- Intro Section -->
-    <section class="intro">
-        <h1>Hey, I'm Kunal</h1>
-        <div class="subtitle">
-            <h3>Product | Strategy | Data | Finance</h3>
-        </div>
+  <section class="skills">
+    <h2>What I Bring to the Table</h2>
+    <ul>
+      <li>✅ Strong bias to action</li>
+      <li>✅ Tackling problems head-on</li>
+      <li>✅ Data-driven decision making</li>
+      <li>✅ Wearing multiple hats</li>
+      <li>✅ Cross-functional collaboration</li>
+    </ul>
+    <a href="mailto:kpingale@umass.edu" class="email-link">Email Me →</a>
+  </section>
 
-        <div class="intro-text">
-            <p>A generalist with 2+ years of work experience in AI/ML and web development. I am a dynamic problem-solver with a knack for first-principles thinking, ready to scale and enhance any team with an analytical approach.</p>
-        </div>
-    </section>
+  <section class="tabs">
+    <button class="tab-btn active" data-tab="strategy">Strategy</button>
+    <button class="tab-btn" data-tab="data">Data Analysis</button>
+    <button class="tab-btn" data-tab="finance">Finance</button>
+  </section>
 
-    <!-- About Me Section -->
-    <section class="about">
-        <h2>About Me</h2>
-        <div class="experience-list">
-            <div class="experience-item">
-                <div class="icon">👨‍💻</div>
-                <div class="details">
-                    <h3>AI/ML Intern at Bitmap Technology</h3>
-                    <p>July 2023 - May 2024</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="icon">👨‍💻</div>
-                <div class="details">
-                    <h3>Web Development Intern at Elite Software</h3>
-                    <p>January 2023 - March 2023</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="icon">🎓</div>
-                <div class="details">
-                    <h3>Master of Science in Engineering Management</h3>
-                    <p>University of Massachusetts Amherst, Expected June 2026</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="icon">🎓</div>
-                <div class="details">
-                    <h3>Bachelor of Engineering in Computer Engineering</h3>
-                    <p>Dr. D.Y Patil Institute of Technology Pune, CGPA: 8.89/10</p>
-                </div>
-            </div>
-        </div>
+  <section class="projects" id="strategy">
+    <h2>Strategy Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="image1.jpg" alt="Number Plate Recognition">
+        <h3>Number Plate Recognition</h3>
+        <p>OCR, CNN, Live Feed, API Integration</p>
+        <span class="tag">SWOT</span>
+      </div>
+    </div>
+  </section>
 
-        <div class="value-prop">
-            <h3>Are you looking to take your business to the next level?</h3>
-            <p>Here's what I bring to the table:</p>
-            <ul>
-                <li><span class="checkbox">✅</span> A strong bias to action</li>
-                <li><span class="checkbox">✅</span> Problem solving by tackling issues head-on</li>
-                <li><span class="checkbox">✅</span> Data driven decision making</li>
-                <li><span class="checkbox">✅</span> Wearing multiple hats with 'whatever it takes' attitude to get the job done</li>
-                <li><span class="checkbox">✅</span> Cross-functional leadership</li>
-            </ul>
-            <a href="mailto:kpingale@umass.edu" class="email-btn">
-                <span class="icon">📧</span> Email Me →
-            </a>
-        </div>
-    </section>
+  <section class="projects hidden" id="data">
+    <h2>Data Analysis Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="image2.jpg" alt="Tourist Website">
+        <h3>Tourist Website</h3>
+        <p>Python, Django, HTML/CSS/JS, PHP</p>
+        <span class="tag">Data Visualization</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio">
-        <h2>Here's my <span class="italic">portfolio</span> of projects in Product, Strategy, Finance and Data Analysis</h2>
-        
-        <!-- Portfolio Tabs -->
-        <div class="portfolio-tabs">
-            <div class="tab active" data-tab="product">
-                <span class="icon">📱</span> Product
-            </div>
-            <div class="tab" data-tab="strategy">
-                <span class="icon">📊</span> Strategy
-            </div>
-            <div class="tab" data-tab="data">
-                <span class="icon">📈</span> Data Analysis
-            </div>
-            <div class="tab" data-tab="finance">
-                <span class="icon">💰</span> Finance
-            </div>
-        </div>
+  <section class="projects hidden" id="finance">
+    <h2>Finance Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="image3.jpg" alt="Finance Dashboard">
+        <h3>Finance Dashboard</h3>
+        <p>Power BI, Forecasting, Excel Models</p>
+        <span class="tag">Forecasting</span>
+      </div>
+    </div>
+  </section>
 
-        <!-- Product Projects -->
-        <div class="tab-content active" id="product-content">
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/ui-ux-design.jpg" alt="UI/UX Design">
-                    </div>
-                    <div class="project-info">
-                        <h3>Number Plate Recognition using ML</h3>
-                        <div class="tags">
-                            <span class="tag">OCR</span>
-                            <span class="tag">CNN</span>
-                            <span class="tag">Cloud Vision API</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/product-discovery.jpg" alt="Product Discovery">
-                    </div>
-                    <div class="project-info">
-                        <h3>Tourist Website</h3>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">User Research</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/development.jpg" alt="Development">
-                    </div>
-                    <div class="project-info">
-                        <h3>AI/ML Projects at Bitmap</h3>
-                        <div class="tags">
-                            <span class="tag">Neural Networks</span>
-                            <span class="tag">Data Preprocessing</span>
-                            <span class="tag">Image Processing</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/user-testing.jpg" alt="User Testing">
-                    </div>
-                    <div class="project-info">
-                        <h3>Web Applications at Elite Software</h3>
-                        <div class="tags">
-                            <span class="tag">React.js</span>
-                            <span class="tag">Bootstrap</span>
-                            <span class="tag">Responsive Design</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <section class="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li>Bitmap Technology – AI/ML Intern: ML model development, real-time image processing</li>
+      <li>Elite Software – Web Dev Intern: Frontend development and testing</li>
+    </ul>
+  </section>
 
-        <!-- Strategy Projects -->
-        <div class="tab-content" id="strategy-content">
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/process-improvement.jpg" alt="Process Improvement">
-                    </div>
-                    <div class="project-info">
-                        <h3>Entrepreneurship Development</h3>
-                        <div class="tags">
-                            <span class="tag">Innovation</span>
-                            <span class="tag">Leadership</span>
-                            <span class="tag">Mentorship</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/innovation.jpg" alt="Innovation Strategy">
-                    </div>
-                    <div class="project-info">
-                        <h3>Product Strategy Framework</h3>
-                        <div class="tags">
-                            <span class="tag">Strategic Thinking</span>
-                            <span class="tag">User Research</span>
-                            <span class="tag">Market Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <footer>
+    <p>Made with ❤️ by Kunal Pingale</p>
+  </footer>
 
-        <!-- Data Analysis Projects -->
-        <div class="tab-content" id="data-content">
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/data-visualization.jpg" alt="Data Visualization">
-                    </div>
-                    <div class="project-info">
-                        <h3>Data Visualization Projects</h3>
-                        <div class="tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Matplotlib</span>
-                            <span class="tag">Pandas</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/netflix-analysis.jpg" alt="Netflix Analysis">
-                    </div>
-                    <div class="project-info">
-                        <h3>SQL & Database Management</h3>
-                        <div class="tags">
-                            <span class="tag">SQL</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Finance Projects -->
-        <div class="tab-content" id="finance-content">
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/financial-analysis.jpg" alt="Financial Analysis">
-                    </div>
-                    <div class="project-info">
-                        <h3>Financial Statement Analysis</h3>
-                        <div class="tags">
-                            <span class="tag">Excel</span>
-                            <span class="tag">Financial Modeling</span>
-                            <span class="tag">Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills">
-        <div class="skills-header">
-            <span class="icon">🛠️</span>
-            <h2>Skills</h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>AI/ML</h3>
-                <div class="skill-tags">
-                    <span class="tag">Neural Networks</span>
-                    <span class="tag">OCR</span>
-                    <span class="tag">CNN</span>
-                    <span class="tag">Image Processing</span>
-                    <span class="tag">Model Training</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Technical</h3>
-                <div class="skill-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">HTML/CSS</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">React.js</span>
-                    <span class="tag">Django</span>
-                    <span class="tag">MongoDB</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Data Analysis</h3>
-                <div class="skill-tags">
-                    <span class="tag">Numpy</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">Matplotlib</span>
-                    <span class="tag">Seaborn</span>
-                    <span class="tag">Power BI</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
-    <section class="case-studies">
-        <div class="case-studies-header">
-            <span class="icon">📁</span>
-            <h2>Case Studies</h2>
-        </div>
-        <div class="case-studies-grid">
-            <div class="case-study-card">
-                <div class="case-study-image">
-                    <img src="images/ecommerce.jpg" alt="E-commerce">
-                </div>
-                <div class="case-study-info">
-                    <h3>E-commerce Business Models</h3>
-                </div>
-            </div>
-            <div class="case-study-card">
-                <div class="case-study-image">
-                    <img src="images/nuclear.jpg" alt="Nuclear Power">
-                </div>
-                <div class="case-study-info">
-                    <h3>Number Plate Recognition Research</h3>
-                </div>
-            </div>
-            <div class="case-study-card">
-                <div class="case-study-image">
-                    <img src="images/product-case.jpg" alt="Product Case">
-                </div>
-                <div class="case-study-info">
-                    <h3>NSS Community Work</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact">
-        <h2>Chat with me!</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <input type="text" placeholder="Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Your question" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Submit <i class="fas fa-arrow-right"></i></button>
-        </form>
-        <div class="made-with">
-            <p>Made with <span class="accent-color">Tally</span></p>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

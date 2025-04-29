@@ -22,15 +22,22 @@
     </nav>
 
     <section class="hero">
-         <!-- Content is simpler here, styled by CSS -->
-        <h1>Kunal Pingale</h1>
-        <p class="tagline">Aspiring Product Manager | Engineering Background | Data-Driven Problem Solver</p>
-        <p class="intro-text">Passionate about leveraging technology and data analytics to build impactful products and solve complex challenges. Seeking Product Management opportunities where I can combine my technical skills with a user-centric approach.</p>
-        <div class="hero-links">
-             <!-- Simple links, styled via CSS -->
-            <a href="mailto:kpingale@umass.edu">EMAIL</a>
-            <a href="https://www.linkedin.com/in/kunal-pingale-81780821b" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-             <a href="tel:+1-413-472-9046">PHONE</a>
+        <div class="hero-content"> <!-- Wrapper for flex layout -->
+            <div class="hero-image-container">
+                 <!-- === ADD YOUR PHOTO HERE === -->
+                 <img src="your-profile-photo.jpg" alt="Kunal Pingale" class="profile-photo">
+                 <!-- === REPLACE placeholder above === -->
+            </div>
+            <div class="hero-text-content"> <!-- Wrapper for text -->
+                <h1>Kunal Pingale</h1>
+                <p class="tagline">Aspiring Product Manager | Engineering Background | Data-Driven Problem Solver</p>
+                <p class="intro-text">Passionate about leveraging technology and data analytics to build impactful products and solve complex challenges. Seeking Product Management opportunities where I can combine my technical skills with a user-centric approach.</p>
+                <div class="hero-links">
+                    <a href="mailto:kpingale@umass.edu">EMAIL</a>
+                    <a href="https://www.linkedin.com/in/kunal-pingale-81780821b" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+                    <a href="tel:+1-413-472-9046">PHONE</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -38,9 +45,8 @@
         <section id="about" class="content-section">
             <h2>About Me</h2>
             <div class="about-content">
-                <!-- Uncomment and replace src if you want a photo here -->
-                <!-- <img src="your-photo.jpg" alt="Kunal Pingale" class="about-photo"> -->
-                <div> <!-- Wrap text in a div for better control if using photo -->
+                <!-- Photo could also go here instead of Hero, if preferred -->
+                <div> <!-- Wrap text in a div for better control -->
                     <p>I am a Master's student in Engineering Management at UMass Amherst with a Bachelor's in Computer Engineering (CGPA: 8.89/10). My technical background in AI/ML and Web Development, combined with coursework in Project Management, Product Management, and Business Intelligence, fuels my passion for the intersection of technology, business, and user needs.</p>
                     <p>I thrive in dynamic environments, enjoy tackling problems head-on with a strong bias for action, and believe in making data-informed decisions. My experience includes developing machine learning models, building web applications, and leading student initiatives like the Startup & Innovation Cell. I am eager to apply my cross-functional skills and learning agility to a challenging Product Manager role.</p>
                  </div>
@@ -93,14 +99,15 @@
             <section class="projects project-category" id="ml-projects">
                 <h3>Machine Learning / AI Projects</h3>
                 <div class="project-grid">
-                    <div class="project-card" data-modal-target="modal-np-rec">
+                    <!-- Project 1: Number Plate Recognition -->
+                    <div class="project-card" data-modal-target="modal-np-rec" tabindex="0"> <!-- Added tabindex -->
                         <img src="placeholder-np-rec.jpg" alt="Number Plate Recognition Project Thumbnail">
                         <div class="card-content">
                             <h4>Number Plate Recognition using ML</h4>
                             <p class="tags">ML | OCR | CNN | Cloud API | Python</p>
                         </div>
                     </div>
-                    <!-- Add other ML project cards here -->
+                    <!-- Add other ML project cards here, include tabindex="0" -->
                 </div>
             </section>
 
@@ -108,14 +115,15 @@
             <section class="projects project-category" id="web-projects">
                  <h3>Web Development Projects</h3>
                 <div class="project-grid">
-                    <div class="project-card" data-modal-target="modal-tourist">
+                    <!-- Project 2: Tourist Website -->
+                    <div class="project-card" data-modal-target="modal-tourist" tabindex="0"> <!-- Added tabindex -->
                         <img src="placeholder-tourist.jpg" alt="Tourist Website Project Thumbnail">
                          <div class="card-content">
                             <h4>Interactive Tourist Website</h4>
                             <p class="tags">Web Dev | Python | Django | JS | DB</p>
                         </div>
                     </div>
-                    <!-- Add other Web Dev project cards here -->
+                    <!-- Add other Web Dev project cards here, include tabindex="0" -->
                 </div>
             </section>
 
@@ -123,57 +131,134 @@
             <section class="projects project-category" id="data-finance-projects">
                  <h3>Data Analysis / Finance Projects</h3>
                  <div class="project-grid">
-                    <div class="project-card" data-modal-target="modal-finance-dashboard">
+                    <!-- Example Finance Project Card -->
+                    <div class="project-card" data-modal-target="modal-finance-dashboard" tabindex="0"> <!-- Added tabindex -->
                         <img src="placeholder-finance.jpg" alt="Finance Dashboard Thumbnail">
                         <div class="card-content">
                              <h4>Finance Dashboard Example</h4>
                             <p class="tags">Power BI | Data Viz | Forecasting</p>
                         </div>
                     </div>
-                     <!-- Add other data/finance project cards here -->
+                     <!-- Add other data/finance project cards here, include tabindex="0" -->
                 </div>
             </section>
 
         </section> <!-- End of main projects section -->
 
-         <!-- === MODALS (Keep all modal divs as they were in the last response) === -->
-        <div class="modal" id="modal-np-rec"> ... (Content from last response) ... </div>
-        <div class="modal" id="modal-tourist"> ... (Content from last response) ... </div>
-        <div class="modal" id="modal-finance-dashboard"> ... (Content from last response) ... </div>
-        <!-- Add modals for any other project cards -->
+         <!-- === MODALS === -->
+         <!-- Modal for Number Plate Recognition -->
+        <div class="modal" id="modal-np-rec">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>Number Plate Recognition using ML</h2>
+                <img src="placeholder-np-rec-large.jpg" alt="Number Plate Recognition Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Timeline:</strong> July 2023 – May 2024</p>
+                    <p><strong>Problem:</strong> Need for an automated system to accurately identify vehicle number plates from images or live feeds for security and traffic management.</p>
+                    <p><strong>My Role & Solution:</strong> As a Project Member, I contributed to developing a user-friendly number plate recognition system. We explored and integrated technologies including Optical Character Recognition (OCR), Convolutional Neural Networks (CNN), Haar Cascade Classifiers (for detection), Google Cloud Vision API, and SQLite for data handling. The system was designed to analyze uploaded images and potentially live camera feeds for effective plate detection and character segmentation/recognition.</p>
+                    <p><strong>Key Technologies:</strong> Python, CNN, OCR, Haar Cascade, Google Cloud Vision API, SQLite, Character Segmentation techniques.</p>
+                    <p><strong>Impact & Learning:</strong> This project advanced my understanding of machine learning pipelines, computer vision techniques, and API integration. It highlighted the potential of ML in real-world applications like security and automation. Contributed to the publication listed below.</p>
+                    <p><strong>Publication:</strong> <a href="#publication-link">"Enhancing Automatic Vehicle Number Plate Recognition Systems..."</a></p>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Modal for Tourist Website -->
+        <div class="modal" id="modal-tourist">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>Interactive Tourist Website</h2>
+                <img src="placeholder-tourist-large.jpg" alt="Tourist Website Detail" class="modal-img">
+                 <div class="modal-body">
+                    <p><strong>Timeline:</strong> January 2023 – March 2023</p>
+                    <p><strong>Problem:</strong> Lack of a user-friendly, interactive platform for tourists to get information and ask questions about destinations.</p>
+                    <p><strong>My Role & Solution:</strong> As a Project Member, I helped develop a dynamic tourist website. Users could interact, ask questions via a form, with responses stored in a backend database (PHP/MySQL implied) and potentially displayed later. We focused on optimizing website performance through techniques like image optimization, caching (conceptual), and ensuring good search engine visibility basics.</p>
+                    <p><strong>Key Technologies:</strong> Python, Django (Backend Framework), HTML, CSS, JavaScript (Frontend Interaction), PHP (Database Connectivity Layer), Database (e.g., MySQL, PostgreSQL via Django ORM).</p>
+                    <p><strong>Impact & Learning:</strong> Gained practical experience in full-stack web development, database integration, and frontend optimization techniques. Learned about building interactive user interfaces and managing backend data flow.</p>
+                 </div>
+            </div>
+        </div>
+
+         <!-- Modal for Finance Dashboard Example -->
+        <div class="modal" id="modal-finance-dashboard">
+             <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>Finance Dashboard Example</h2>
+                <img src="placeholder-finance-large.jpg" alt="Finance Dashboard Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Timeline:</strong> [Add Timeline, e.g., Q1 2023]</p>
+                    <p><strong>Problem:</strong> [Describe the finance problem, e.g., Difficulty in visualizing monthly expenses and identifying trends across categories.]</p>
+                    <p><strong>My Role & Solution:</strong> [Describe your role and the solution, e.g., Designed and built an interactive dashboard in Power BI using imported transaction data. Created visualizations for spending trends, category breakdowns, and budget comparisons. Implemented basic forecasting models.]</p>
+                    <p><strong>Key Technologies:</strong> Microsoft Power BI, Excel (for data prep/modeling), DAX (Power BI formulas), Forecasting techniques.</p>
+                    <p><strong>Impact & Learning:</strong> [Describe outcome, e.g., Provided clear insights into spending habits, enabling better budgeting decisions. Enhanced skills in data visualization, Power BI development, and basic financial analysis.]</p>
+                 </div>
+            </div>
+        </div>
+        <!-- Add more modals here for any other project cards you added -->
          <!-- === END MODALS === -->
 
 
         <section id="experience" class="content-section">
-             <h2>Industry Experience</h2>
-            <!-- Experience items from last response -->
-             <div class="experience-item">...</div>
-             <div class="experience-item">...</div>
+            <h2>Industry Experience</h2>
+            <div class="experience-item">
+                <h3>AI/ML Intern</h3>
+                <p class="company-location">Bitmap Technology, Pune | July 2023 – May 2024</p>
+                <ul>
+                    <li>Designed and implemented interactive AI/ML projects, gaining hands-on experience in the full model lifecycle: data preprocessing, analysis, training, validation, tuning, testing, and real-time monitoring.</li>
+                    <li>Applied technologies like OCR, CNNs, and image processing to build robust systems for real-time applications, focusing on improving AI/ML capabilities.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Web Development Intern</h3>
+                <p class="company-location">Elite Software, Pune | January 2023 – March 2023</p>
+                <ul>
+                    <li>Developed interactive and responsive web pages and applications ensuring cross-browser compatibility.</li>
+                    <li>Contributed to assessing UI/UX design, debugging, testing, and enhancing the overall efficiency and user-friendliness of web applications.</li>
+                    <li>Utilized HTML, CSS, JavaScript, React.js, and Bootstrap for frontend development and worked with DBMS concepts.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="education" class="content-section">
             <h2>Education</h2>
-             <!-- Education items from last response -->
-             <div class="education-item">...</div>
-             <div class="education-item">...</div>
+             <div class="education-item">
+                <h3>Master of Science in Engineering Management</h3>
+                <p>University of Massachusetts Amherst | Expected June 2026</p>
+                <p><em>Key Courses:</em> Project Management, Product Management, Supply Chain Management, Business Intelligence</p>
+            </div>
+             <div class="education-item">
+                 <h3>Bachelor of Engineering in Computer Engineering</h3>
+                <p>Dr. D.Y Patil Institute of Technology, Pune | June 2024</p>
+                <p><em>CGPA:</em> 8.89 / 10.0</p>
+            </div>
         </section>
 
         <section id="leadership" class="content-section">
-             <h2>Leadership & Service</h2>
-            <!-- Leadership items from last response -->
-             <div class="leadership-item">...</div>
-             <div class="leadership-item">...</div>
+            <h2>Leadership & Service</h2>
+             <div class="leadership-item">
+                <h3>Coordinator, Entrepreneurship Development – Startup and Innovation Cell</h3>
+                <p>Dr. D.Y Patil Institute of Technology, Pune | 2021 – 2022</p>
+                <ul><li>Organized meetings and seminars connecting students with entrepreneurs to foster innovation and share knowledge about startups.</li></ul>
+             </div>
+             <div class="leadership-item">
+                 <h3>Member, National Service Scheme (NSS)</h3>
+                <p>Dr. D.Y Patil Institute of Technology, Pune | 2021</p>
+                 <ul><li>Participated in community service activities focused on societal betterment, youth empowerment, and promoting cleanliness.</li></ul>
+            </div>
         </section>
 
-        <section id="publication-link" class="content-section">
+        <section id="publication-link" class="content-section"> <!-- Anchor point for publication link in modal -->
              <h2>Publication</h2>
-             <!-- Publication item from last response -->
-             <div class="publication-item">...</div>
+             <div class="publication-item">
+                <p>"Enhancing Automatic Vehicle Number Plate Recognition Systems: A Multidimensional Approach to Improve Efficiency and Applicability" – IN IJARSCT, VOLUME 4, ISSUE 5, MAY 2024</p>
+                <!-- Optional: Add a direct link if available online -->
+                <!-- <a href="[Link to Publication]" target="_blank" rel="noopener noreferrer">Read Publication</a> -->
+            </div>
         </section>
 
     </main>
 
-    <footer> <!-- Footer from last response -->
+    <footer> <!-- Footer -->
         <p>Made with <i class="fas fa-heart" style="color: #e44d26;"></i> by Kunal Santosh Pingale</p>
         <p><a href="#">Back to Top</a></p>
     </footer>

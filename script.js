@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
             body.style.overflow = 'hidden'; // Prevent background scrolling
             // Focus management (optional but good for accessibility)
             const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            if (focusableElements.length > 0) {
-                focusableElements[0].focus();
+            // Find first focusable element, typically the close button or title link
+            const firstElement = modal.querySelector('.close-button') || (focusableElements.length > 0 ? focusableElements[0] : null);
+            if(firstElement) {
+                firstElement.focus();
             }
+
         } else {
             console.error("Modal with ID: " + modalId + " not found.");
         }
@@ -42,15 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         // Add keyboard accessibility (Enter key)
         card.addEventListener("keydown", (event) => {
-             if (event.key === 'Enter') {
+             if (event.key === 'Enter' || event.key === ' ') { // Also allow spacebar
+                  event.preventDefault(); // Prevent page scrolling on spacebar
                   const modalId = card.getAttribute("data-modal-target");
                   if (modalId) {
                       openModal(modalId);
                   }
              }
         });
-        // Make card focusable
-        card.setAttribute('tabindex', '0');
+        // Make card focusable if it wasn't already via tabindex="0" in HTML
+        if (!card.hasAttribute('tabindex')) {
+             card.setAttribute('tabindex', '0');
+        }
     });
 
 
@@ -60,6 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const modal = button.closest(".modal");
             closeModal(modal);
         });
+         // Add keyboard accessibility (Enter/Space key) for close button
+         button.addEventListener("keydown", (event) => {
+             if (event.key === 'Enter' || event.key === ' ') {
+                 event.preventDefault();
+                 const modal = button.closest(".modal");
+                 closeModal(modal);
+             }
+         });
     });
 
     // Add click listener to modal background (to close modal)
@@ -102,11 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
-
-                // Optional: Update URL hash without jump after scrolling (for better history/bookmarking)
-                // setTimeout(() => {
-                //    history.pushState(null, null, targetId);
-                // }, 500); // Adjust delay as needed
 
             } else {
                  console.warn("Smooth scroll target not found:", targetId);

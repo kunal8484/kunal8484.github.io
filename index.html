@@ -5,38 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kunal Santosh Pingale - Product Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Optional: Add Font Awesome for icons --->
+    <!-- Optional: Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="banner">
-        <!-- Use a relevant, high-quality background image -->
-        <img src="placeholder-banner.jpg" alt="Abstract technology banner" class="banner-img">
-        <div class="header-content">
-             <!-- Consider adding your photo here -->
-             <!-- <img src="your-photo.jpg" alt="Kunal Pingale" class="profile-photo"> -->
-             <h1>Kunal Santosh Pingale</h1>
-             <!-- PM-focused tagline -->
-             <p class="tagline">Aspiring Product Manager | Engineering Background | Data-Driven Problem Solver</p>
-             <p class="intro-text">Passionate about leveraging technology and data analytics to build impactful products and solve complex challenges. Seeking Product Management opportunities where I can combine my technical skills with a user-centric approach.</p>
-             <div class="contact-links">
-                 <a href="mailto:kpingale@umass.edu" aria-label="Email Kunal"><i class="fas fa-envelope"></i> Email</a>
-                 <a href="https://www.linkedin.com/in/kunal-pingale-81780821b" target="_blank" rel="noopener noreferrer" aria-label="Kunal's LinkedIn Profile"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                 <a href="tel:+1-413-472-9046" aria-label="Call Kunal"><i class="fas fa-phone"></i> (413) 472-9046</a>
-                 <!-- Add GitHub if applicable -->
-                 <!-- <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Kunal's GitHub Profile"><i class="fab fa-github"></i> GitHub</a> -->
-            </div>
+    <nav class="main-nav">
+        <ul>
+            <!-- Make sure 'Kunal_Pingale_Resume.pdf' is the correct path/name -->
+            <li><a href="Kunal_Pingale_Resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+             <li><a href="#leadership">LEADERSHIP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Kunal Pingale</h1>
+        <p class="tagline">Aspiring Product Manager | Engineering Background | Data-Driven Problem Solver</p>
+        <p class="intro-text">Passionate about leveraging technology and data analytics to build impactful products and solve complex challenges. Seeking Product Management opportunities where I can combine my technical skills with a user-centric approach.</p>
+        <div class="hero-links">
+            <a href="mailto:kpingale@umass.edu" class="hero-link">EMAIL</a>
+            <a href="https://www.linkedin.com/in/kunal-pingale-81780821b" target="_blank" rel="noopener noreferrer" class="hero-link">LINKEDIN</a>
+             <a href="tel:+1-413-472-9046" class="hero-link">PHONE</a>
         </div>
-    </header>
+    </section>
 
     <main>
         <section id="about" class="content-section">
             <h2>About Me</h2>
-             <!-- Add your photo here if not in the header -->
             <div class="about-content">
+                <!-- Uncomment and replace src if you want a photo here -->
                 <!-- <img src="your-photo.jpg" alt="Kunal Pingale" class="about-photo"> -->
-                <p>I am a Master's student in Engineering Management at UMass Amherst with a Bachelor's in Computer Engineering (CGPA: 8.89/10). My technical background in AI/ML and Web Development, combined with coursework in Project Management, Product Management, and Business Intelligence, fuels my passion for the intersection of technology, business, and user needs.</p>
-                <p>I thrive in dynamic environments, enjoy tackling problems head-on with a strong bias for action, and believe in making data-informed decisions. My experience includes developing machine learning models, building web applications, and leading student initiatives like the Startup & Innovation Cell. I am eager to apply my cross-functional skills and learning agility to a challenging Product Manager role.</p>
+                <div> <!-- Wrap text in a div for better control if using photo -->
+                    <p>I am a Master's student in Engineering Management at UMass Amherst with a Bachelor's in Computer Engineering (CGPA: 8.89/10). My technical background in AI/ML and Web Development, combined with coursework in Project Management, Product Management, and Business Intelligence, fuels my passion for the intersection of technology, business, and user needs.</p>
+                    <p>I thrive in dynamic environments, enjoy tackling problems head-on with a strong bias for action, and believe in making data-informed decisions. My experience includes developing machine learning models, building web applications, and leading student initiatives like the Startup & Innovation Cell. I am eager to apply my cross-functional skills and learning agility to a challenging Product Manager role.</p>
+                 </div>
              </div>
         </section>
 
@@ -47,10 +52,10 @@
                     <h3><i class="fas fa-cogs"></i> Technical</h3>
                     <ul>
                         <li>Python (NumPy, Pandas)</li>
-                        <li>Machine Learning (Conceptual: CNN, OCR)</li>
+                        <li>Machine Learning (CNN, OCR)</li>
                         <li>Web Development (HTML, CSS, JS, React.js, Django, PHP)</li>
                         <li>Databases (SQL, SQLite, MongoDB)</li>
-                        <li>Cloud (Conceptual: Cloud Vision API)</li>
+                        <li>Cloud (Google Cloud Vision API)</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -61,8 +66,8 @@
                         <li>Data Analysis & Visualization</li>
                         <li>Business Intelligence (Academic)</li>
                         <li>Supply Chain Management (Academic)</li>
-                        <li>Problem Solving</li>
-                        <li>Cross-functional Collaboration (via projects/leadership)</li>
+                        <li>Problem Solving & Strategy</li>
+                        <li>Cross-functional Collaboration</li>
                      </ul>
                 </div>
                 <div class="skill-category">
@@ -70,41 +75,81 @@
                     <ul>
                         <li>Microsoft Power BI</li>
                         <li>Data Visualization (Matplotlib, Seaborn)</li>
-                        <li>Version Control (Git - Assumed)</li>
+                        <li>Version Control (Git)</li>
                         <li>MS Office / Google Suite (PPTs)</li>
+                        <li>SQL Clients</li>
                      </ul>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="content-section">
+        <section id="projects" class="content-section"> <!-- Main projects container -->
             <h2>Projects Showcase</h2>
             <p class="section-intro">Click on a project card to learn more about the challenge, solution, and technologies used.</p>
-            <div class="project-grid">
-                <!-- Project 1: Number Plate Recognition -->
-                <div class="project-card" data-modal-target="modal-np-rec">
-                    <img src="placeholder-np-rec.jpg" alt="Number Plate Recognition Project Thumbnail">
-                    <div class="card-content">
-                        <h3>Number Plate Recognition using ML</h3>
-                        <p class="tags">ML | OCR | CNN | Cloud API | Python</p>
+
+            <!-- Category 1: Machine Learning / AI -->
+            <section class="projects project-category" id="ml-projects">
+                <h3>Machine Learning / AI Projects</h3>
+                <div class="project-grid">
+                    <!-- Project 1: Number Plate Recognition -->
+                    <div class="project-card" data-modal-target="modal-np-rec">
+                        <img src="placeholder-np-rec.jpg" alt="Number Plate Recognition Project Thumbnail">
+                        <div class="card-content">
+                            <h4>Number Plate Recognition using ML</h4>
+                            <p class="tags">ML | OCR | CNN | Cloud API | Python</p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Project 2: Tourist Website -->
-                <div class="project-card" data-modal-target="modal-tourist">
-                    <img src="placeholder-tourist.jpg" alt="Tourist Website Project Thumbnail">
-                     <div class="card-content">
-                        <h3>Interactive Tourist Website</h3>
-                        <p class="tags">Web Dev | Python | Django | JS | DB</p>
+                    <!-- Add other ML project cards here -->
+                    <!-- Example:
+                    <div class="project-card" data-modal-target="modal-another-ml">
+                        <img src="placeholder-ml2.jpg" alt="Another ML Project">
+                        <div class="card-content">
+                            <h4>Another ML Project Title</h4>
+                            <p class="tags">Python | Scikit-learn | Data Analysis</p>
+                        </div>
                     </div>
+                    -->
                 </div>
-                
-                <!-- Add more project cards here if you have them -->
+            </section>
 
-            </div>
-        </section>
+            <!-- Category 2: Web Development -->
+            <section class="projects project-category" id="web-projects">
+                 <h3>Web Development Projects</h3>
+                <div class="project-grid">
+                    <!-- Project 2: Tourist Website -->
+                    <div class="project-card" data-modal-target="modal-tourist">
+                        <img src="placeholder-tourist.jpg" alt="Tourist Website Project Thumbnail">
+                         <div class="card-content">
+                            <h4>Interactive Tourist Website</h4>
+                            <p class="tags">Web Dev | Python | Django | JS | DB</p>
+                        </div>
+                    </div>
+                    <!-- Add other Web Dev project cards here -->
+                </div>
+            </section>
 
-         <!-- Modals for Projects -->
+            <!-- Category 3: Data / Finance (Example) -->
+            <section class="projects project-category" id="data-finance-projects">
+                 <h3>Data Analysis / Finance Projects</h3>
+                 <div class="project-grid">
+                    <!-- Example Finance Project Card -->
+                    <div class="project-card" data-modal-target="modal-finance-dashboard">
+                        <img src="placeholder-finance.jpg" alt="Finance Dashboard Thumbnail">
+                        <div class="card-content">
+                             <h4>Finance Dashboard Example</h4>
+                            <p class="tags">Power BI | Data Viz | Forecasting</p>
+                        </div>
+                    </div>
+                     <!-- Add other data/finance project cards here -->
+                </div>
+            </section>
+
+        </section> <!-- End of main projects section -->
+
+         <!-- === MODALS === -->
+         <!-- Make sure you have one modal DIV for each project card -->
+
+        <!-- Modal for Number Plate Recognition -->
         <div class="modal" id="modal-np-rec">
             <div class="modal-content">
                 <span class="close-button">×</span>
@@ -121,6 +166,7 @@
             </div>
         </div>
 
+        <!-- Modal for Tourist Website -->
         <div class="modal" id="modal-tourist">
             <div class="modal-content">
                 <span class="close-button">×</span>
@@ -129,13 +175,48 @@
                  <div class="modal-body">
                     <p><strong>Timeline:</strong> January 2023 – March 2023</p>
                     <p><strong>Problem:</strong> Lack of a user-friendly, interactive platform for tourists to get information and ask questions about destinations.</p>
-                    <p><strong>My Role & Solution:</strong> As a Project Member, I helped develop a dynamic tourist website. Users could interact, ask questions via a form, with responses stored in a backend database (PHP/MySQL or similar implied by resume) and potentially displayed later. We focused on optimizing website performance through techniques like image optimization, caching (conceptual), and ensuring good search engine visibility basics.</p>
+                    <p><strong>My Role & Solution:</strong> As a Project Member, I helped develop a dynamic tourist website. Users could interact, ask questions via a form, with responses stored in a backend database (PHP/MySQL implied) and potentially displayed later. We focused on optimizing website performance through techniques like image optimization, caching (conceptual), and ensuring good search engine visibility basics.</p>
                     <p><strong>Key Technologies:</strong> Python, Django (Backend Framework), HTML, CSS, JavaScript (Frontend Interaction), PHP (Database Connectivity Layer), Database (e.g., MySQL, PostgreSQL via Django ORM).</p>
                     <p><strong>Impact & Learning:</strong> Gained practical experience in full-stack web development, database integration, and frontend optimization techniques. Learned about building interactive user interfaces and managing backend data flow.</p>
                  </div>
             </div>
         </div>
-         <!-- End Modals -->
+
+         <!-- Modal for Finance Dashboard Example -->
+        <div class="modal" id="modal-finance-dashboard">
+             <div class="modal-content">
+                <span class="close-button">×</span>
+                <h2>Finance Dashboard Example</h2>
+                <img src="placeholder-finance-large.jpg" alt="Finance Dashboard Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Timeline:</strong> [Add Timeline, e.g., Q1 2023]</p>
+                    <p><strong>Problem:</strong> [Describe the finance problem, e.g., Difficulty in visualizing monthly expenses and identifying trends across categories.]</p>
+                    <p><strong>My Role & Solution:</strong> [Describe your role and the solution, e.g., Designed and built an interactive dashboard in Power BI using imported transaction data. Created visualizations for spending trends, category breakdowns, and budget comparisons. Implemented basic forecasting models.]</p>
+                    <p><strong>Key Technologies:</strong> Microsoft Power BI, Excel (for data prep/modeling), DAX (Power BI formulas), Forecasting techniques.</p>
+                    <p><strong>Impact & Learning:</strong> [Describe outcome, e.g., Provided clear insights into spending habits, enabling better budgeting decisions. Enhanced skills in data visualization, Power BI development, and basic financial analysis.]</p>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Add more modals here for any other project cards you added -->
+        <!-- Example:
+        <div class="modal" id="modal-another-ml">
+            <div class="modal-content">
+                <span class="close-button">×</span>
+                <h2>Another ML Project Title</h2>
+                <img src="placeholder-ml2-large.jpg" alt="Another ML Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Timeline:</strong> ... </p>
+                    <p><strong>Problem:</strong> ... </p>
+                    <p><strong>My Role & Solution:</strong> ... </p>
+                    <p><strong>Key Technologies:</strong> ... </p>
+                    <p><strong>Impact & Learning:</strong> ... </p>
+                 </div>
+            </div>
+        </div>
+        -->
+         <!-- === END MODALS === -->
+
 
         <section id="experience" class="content-section">
             <h2>Industry Experience</h2>
@@ -186,20 +267,21 @@
             </div>
         </section>
 
-        <section id="publication-link" class="content-section">
+        <section id="publication-link" class="content-section"> <!-- Anchor point for publication link in modal -->
              <h2>Publication</h2>
              <div class="publication-item">
                 <p>"Enhancing Automatic Vehicle Number Plate Recognition Systems: A Multidimensional Approach to Improve Efficiency and Applicability" – IN IJARSCT, VOLUME 4, ISSUE 5, MAY 2024</p>
-                <!-- Optional: Add a link if available online -->
-                <!-- <a href="#" target="_blank" rel="noopener noreferrer">Read Publication</a> -->
+                <!-- Optional: Add a direct link if available online -->
+                <!-- <a href="[Link to Publication]" target="_blank" rel="noopener noreferrer">Read Publication</a> -->
             </div>
         </section>
 
     </main>
 
     <footer>
-        <p>Made with <i class="fas fa-heart"></i> by Kunal Santosh Pingale</p>
-        <p><a href="#top">Back to Top</a></p> <!-- Simple back to top -->
+        <p>Made with <i class="fas fa-heart" style="color: #e44d26;"></i> by Kunal Santosh Pingale</p>
+        <!-- Simple back to top link -->
+        <p><a href="#">Back to Top</a></p>
     </footer>
 
     <script src="script.js"></script>

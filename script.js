@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.style.display = "block";
-            // Optional: Prevent background scrolling when modal is open
+            
             document.body.style.overflow = 'hidden';
         }
     }

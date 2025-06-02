@@ -11,27 +11,24 @@
 <body>
     <nav class="main-nav">
         <ul>
-            <!-- Make sure 'Kunal_Pingale_Resume.pdf' is the correct path/name -->
             <li><a href="Kunal_Pingale_Resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a></li>
             <li><a href="#projects">PROJECTS</a></li>
             <li><a href="#experience">EXPERIENCE</a></li>
             <li><a href="#education">EDUCATION</a></li>
             <li><a href="#skills">SKILLS</a></li>
-             <li><a href="#leadership">LEADERSHIP</a></li>
+            <li><a href="#leadership">LEADERSHIP</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <div class="hero-content"> <!-- Wrapper for flex layout -->
+        <div class="hero-content">
             <div class="hero-image-container">
-                 <!-- === ADD YOUR PHOTO HERE === -->
                  <img src="Kunalp.jpeg" alt="Kunal Pingale" class="profile-photo">
-                 <!-- === REPLACE placeholder above === -->
             </div>
-            <div class="hero-text-content"> <!-- Wrapper for text -->
+            <div class="hero-text-content">
                 <h1>Kunal Pingale</h1>
-                <p class="tagline">Aspiring Product Manager | Engineering Background | Data-Driven Problem Solver</p>
-                <p class="intro-text">Passionate about leveraging technology and data analytics to build impactful products and solve complex challenges. Seeking Product Management opportunities where I can combine my technical skills with a user-centric approach.</p>
+                <p class="tagline">Aspiring Product Manager | Combining Deep Engineering Expertise with a Passion for Data-Driven Insights & User-Centric Solutions | Eager to Innovate and Lead Product Development Cycles</p>
+                <p class="intro-text">Deeply passionate about harnessing the power of innovative technology and insightful data analytics to conceptualize, develop, and launch products that not only solve complex user and business challenges but also deliver tangible value and exceptional experiences. I am actively seeking challenging Product Management opportunities where I can strategically integrate my solid engineering background, sharp analytical abilities, and a steadfast user-first perspective to drive product vision, strategy, and execution within a dynamic team.</p>
                 <div class="hero-links">
                     <a href="mailto:kpingale@umass.edu">EMAIL</a>
                     <a href="https://www.linkedin.com/in/kunal-pingale-81780821b" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
@@ -45,8 +42,7 @@
         <section id="about" class="content-section">
             <h2>About Me</h2>
             <div class="about-content">
-                <!-- Photo could also go here instead of Hero, if preferred -->
-                <div> <!-- Wrap text in a div for better control -->
+                <div>
                     <p>I am a Master's student in Engineering Management at UMass Amherst with a Bachelor's in Computer Engineering (CGPA: 8.89/10). My technical background in AI/ML and Web Development, combined with coursework in Project Management, Product Management, and Business Intelligence, fuels my passion for the intersection of technology, business, and user needs.</p>
                     <p>I thrive in dynamic environments, enjoy tackling problems head-on with a strong bias for action, and believe in making data-informed decisions. My experience includes developing machine learning models, building web applications, and leading student initiatives like the Startup & Innovation Cell. I am eager to apply my cross-functional skills and learning agility to a challenging Product Manager role.</p>
                  </div>
@@ -60,19 +56,23 @@
                     <h3><i class="fas fa-cogs"></i> Technical</h3>
                     <ul>
                         <li>Python (NumPy, Pandas)</li>
-                        <li>Machine Learning (CNN, OCR)</li>
+                        <li>Machine Learning (CNN, OCR, Regression, Classification, Clustering, Time-Series)</li>
                         <li>Web Development (HTML, CSS, JS, React.js, Django, PHP)</li>
                         <li>Databases (SQL, SQLite, MongoDB)</li>
-                        <li>Cloud (Google Cloud Vision API)</li>
+                        <li>Cloud (Google Cloud Vision API, AWS/Azure concepts)</li>
+                        <li>AR/VR Concepts</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-lightbulb"></i> Product & Business</h3>
                     <ul>
-                        <li>Product Management (Academic)</li>
-                        <li>Project Management (Academic)</li>
+                        <li>Product Management (Academic, Conceptual)</li>
+                        <li>Project Management (Academic, Conceptual)</li>
                         <li>Data Analysis & Visualization</li>
                         <li>Business Intelligence (Academic)</li>
+                        <li>Financial Analysis (NPV, IRR, DCF)</li>
+                        <li>Market Research (SWOT, 5C, PESTEL)</li>
+                        <li>Go-To-Market Strategy</li>
                         <li>Supply Chain Management (Academic)</li>
                         <li>Problem Solving & Strategy</li>
                         <li>Cross-functional Collaboration</li>
@@ -81,9 +81,10 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-tools"></i> Tools</h3>
                     <ul>
-                        <li>Microsoft Power BI</li>
+                        <li>Microsoft Power BI, Excel</li>
                         <li>Data Visualization (Matplotlib, Seaborn)</li>
-                        <li>Version Control (Git)</li>
+                        <li>Scikit-learn, Statsmodels, SciPy, Prophet</li>
+                        <li>Version Control (Git), Jupyter Notebooks</li>
                         <li>MS Office / Google Suite (PPTs)</li>
                         <li>SQL Clients</li>
                      </ul>
@@ -91,62 +92,103 @@
             </div>
         </section>
 
-        <section id="projects" class="content-section"> <!-- Main projects container -->
+        <section id="projects" class="content-section">
             <h2>Projects Showcase</h2>
             <p class="section-intro">Click on a project card to learn more about the challenge, solution, and technologies used.</p>
 
-            <!-- Category 1: Machine Learning / AI -->
-            <section class="projects project-category" id="ml-projects">
+            <!-- Category 1: Machine Learning / AI Projects -->
+            <section class="projects project-category" id="ml-ai-projects">
                 <h3>Machine Learning / AI Projects</h3>
                 <div class="project-grid">
-                    <!-- Project 1: Number Plate Recognition -->
-                    <div class="project-card" data-modal-target="modal-np-rec" tabindex="0"> <!-- Added tabindex -->
+                    <div class="project-card" data-modal-target="modal-np-rec" tabindex="0">
                         <img src="placeholder-np-rec.jpg" alt="Number Plate Recognition Project Thumbnail">
                         <div class="card-content">
                             <h4>Number Plate Recognition using ML</h4>
                             <p class="tags">ML | OCR | CNN | Cloud API | Python</p>
                         </div>
                     </div>
-                    <!-- Add other ML project cards here, include tabindex="0" -->
-                </div>
-            </section>
-
-            <!-- Category 2: Technical Project Management -->
-            <section class="projects project-category" id="TPM-Project">
-                 <h3>Web Development Projects</h3>
-                <div class="project-grid">
-                    <!-- Project 2: Tourist Website -->
-                    <div class="project-card" data-modal-target="modal-tourist" tabindex="0"> <!-- Added tabindex -->
-                        <img src="placeholder-tourist.jpg" alt="Tourist Website Project Thumbnail">
-                         <div class="card-content">
-                            <h4>Interactive Tourist Website</h4>
-                            <p class="tags">Web Dev | Python | Django | JS | DB</p>
+                    <div class="project-card" data-modal-target="modal-nyc-taxi" tabindex="0">
+                        <img src="placeholder-nyc-taxi.jpg" alt="NYC Taxi Data Analysis Thumbnail">
+                        <div class="card-content">
+                            <h4>Predictive Analysis: NYC Taxi Data</h4>
+                            <p class="tags">ML | Predictive Analytics | Python | Pandas | Scikit-learn | Time Series</p>
                         </div>
                     </div>
-                    <!-- Add other Web Dev project cards here, include tabindex="0" -->
                 </div>
             </section>
 
-            <!-- Category 3: Data / Finance (Example) -->
-            <section class="projects project-category" id="data-finance-projects">
-                 <h3>Data Analysis / Finance Projects</h3>
+            <!-- Category 2: Data Analytics & Business Intelligence Projects -->
+            <section class="projects project-category" id="data-bi-projects">
+                 <h3>Data Analytics & Business Intelligence Projects</h3>
                  <div class="project-grid">
-                    <!-- Example Finance Project Card -->
-                    <div class="project-card" data-modal-target="modal-finance-dashboard" tabindex="0"> <!-- Added tabindex -->
+                    <div class="project-card" data-modal-target="modal-finance-dashboard" tabindex="0">
                         <img src="placeholder-finance.jpg" alt="Finance Dashboard Thumbnail">
                         <div class="card-content">
                              <h4>Finance Dashboard Example</h4>
                             <p class="tags">Power BI | Data Viz | Forecasting</p>
                         </div>
                     </div>
-                     <!-- Add other data/finance project cards here, include tabindex="0" -->
+                    <div class="project-card" data-modal-target="modal-cvs-expansion" tabindex="0">
+                        <img src="placeholder-cvs.jpg" alt="CVS Facility Expansion Analysis Thumbnail">
+                        <div class="card-content">
+                             <h4>CVS Facility Expansion: Financial Analysis</h4>
+                            <p class="tags">Financial Analysis | BI | Excel | DCF | NPV/IRR</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-modal-target="modal-parking-lot" tabindex="0">
+                        <img src="placeholder-parking.jpg" alt="Parking Lot Redesign Thumbnail">
+                        <div class="card-content">
+                            <h4>UMass Parking Lot Redesign Analysis</h4>
+                            <p class="tags">Data Analysis | Project Planning | Python | Statistical Analysis</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-modal-target="modal-online-purchase" tabindex="0">
+                        <img src="placeholder-ecommerce.jpg" alt="Online Shopping Analysis Thumbnail">
+                        <div class="card-content">
+                            <h4>Online Purchase Behavior Analysis</h4>
+                            <p class="tags">Data Analysis | E-commerce | Python | Pandas | Statistics</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-        </section> <!-- End of main projects section -->
+            <!-- Category 3: Product Management & Strategy Projects -->
+            <section class="projects project-category" id="product-strategy-projects">
+                 <h3>Product Management & Strategy Projects</h3>
+                <div class="project-grid">
+                    <div class="project-card" data-modal-target="modal-mythbuster" tabindex="0">
+                        <img src="placeholder-mythbuster.jpg" alt="MythBuster.AI Thumbnail">
+                        <div class="card-content">
+                            <h4>MythBuster.AI: Deepfake Detection</h4>
+                            <p class="tags">Product Management | AI Strategy | GTM | Market Research</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-modal-target="modal-meduverse" tabindex="0">
+                        <img src="placeholder-meduverse.jpg" alt="Meduverse AR Platform Thumbnail">
+                        <div class="card-content">
+                            <h4>Meduverse: AR Medical Training</h4>
+                            <p class="tags">Product Strategy | Augmented Reality | EdTech | Business Plan</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Category 4: Web Development Projects -->
+            <section class="projects project-category" id="web-dev-projects">
+                 <h3>Web Development Projects</h3>
+                <div class="project-grid">
+                    <div class="project-card" data-modal-target="modal-tourist" tabindex="0">
+                        <img src="placeholder-tourist.jpg" alt="Tourist Website Project Thumbnail">
+                         <div class="card-content">
+                            <h4>Interactive Tourist Website</h4>
+                            <p class="tags">Web Dev | Python | Django | JS | DB</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
 
          <!-- === MODALS === -->
-         <!-- Modal for Number Plate Recognition -->
         <div class="modal" id="modal-np-rec">
             <div class="modal-content">
                 <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
@@ -163,7 +205,6 @@
             </div>
         </div>
 
-        <!-- Modal for Tourist Website -->
         <div class="modal" id="modal-tourist">
             <div class="modal-content">
                 <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
@@ -179,7 +220,6 @@
             </div>
         </div>
 
-         <!-- Modal for Finance Dashboard Example -->
         <div class="modal" id="modal-finance-dashboard">
              <div class="modal-content">
                 <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
@@ -194,9 +234,97 @@
                  </div>
             </div>
         </div>
-        <!-- Add more modals here for any other project cards you added -->
-         <!-- === END MODALS === -->
 
+        <!-- Modal for NYC Taxi Data -->
+        <div class="modal" id="modal-nyc-taxi">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>Predictive Analysis for Urban Transportation: NYC Taxi Data</h2>
+                <img src="placeholder-nyc-taxi-large.jpg" alt="NYC Taxi Data Analysis Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Project Description:</strong> The final project applies machine learning techniques to NYC Yellow Taxi trip data to predict fare and trip duration, understand tipping behavior, and forecast demand. The project integrates regression, classification, clustering, and time-series models to identify spatial and temporal patterns in taxi activity. After cleaning and preprocessing a sample of 500,000 records, the team developed predictive models to support smarter fleet deployment, optimized taxi dispatching, and data-driven urban mobility strategies.</p>
+                    <p><strong>My Role:</strong> [Describe your specific role and contributions on this team project. E.g., Led data preprocessing and feature engineering efforts; Developed and evaluated regression models for fare prediction; Contributed to time-series demand forecasting.]</p>
+                    <p><strong>Key Technologies & Tools:</strong> Python, Pandas, Matplotlib, Seaborn, Scikit-learn (Linear Regression, XGBoost, K-Means), Statsmodels/SciPy, Prophet, SARIMA, Jupyter Notebook, NYC Taxi Trip Data.</p>
+                    <p><strong>Impact & Learning:</strong> [Describe the impact of the project or key learnings. E.g., Gained deep experience in applying a variety of ML models to a large real-world dataset, enhancing skills in predictive modeling and data-driven decision support for urban planning.]</p>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Modal for MythBuster.AI -->
+        <div class="modal" id="modal-mythbuster">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>MythBuster.AI – Real-Time Deepfake Detection and Media Authentication</h2>
+                <img src="placeholder-mythbuster-large.jpg" alt="MythBuster.AI Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Project Description:</strong> MythBuster.AI is an AI-powered platform designed to combat misinformation by providing real-time verification of digital media. Tailored for journalists, content creators, and the public, it detects deepfakes in videos, images, and audio using advanced forensic and AI tools. The project outlines product vision, go-to-market strategy, risk management, stakeholder engagement, and projected ROI, positioning MythBuster.AI as a global standard in media authentication.</p>
+                    <p><strong>My Role:</strong> [Describe your role. E.g., Led the product strategy and market research phases; Defined the product roadmap and feature prioritization; Developed the go-to-market strategy and ROI projections.]</p>
+                    <p><strong>Key Technologies & Concepts:</strong> Artificial Intelligence & Deep Learning (conceptual), APIs from Verified Media Sources, Natural Language Processing (NLP for truth classification), Cloud Computing & API Integration (architecture), Market Research & Strategic Planning (SWOT, 5C, PESTEL), Jupyter Notebooks / Presentation Tools, Subscription-Based Revenue Model Simulation.</p>
+                    <p><strong>Impact & Learning:</strong> [Describe impact/learning. E.g., Developed a comprehensive product strategy for an innovative AI solution, gaining experience in market analysis, GTM planning, and articulating product value for a high-impact problem.]</p>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Modal for CVS Facility Expansion -->
+        <div class="modal" id="modal-cvs-expansion">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>Facility Expansion of CVS – Financial Analysis</h2>
+                <img src="placeholder-cvs-large.jpg" alt="CVS Expansion Analysis Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Project Description:</strong> This project explores the financial viability of expanding CVS Health’s operations into three U.S. regions: Boise (Idaho), Raleigh-Durham (North Carolina), and Madison (Mississippi). The team conducted detailed cost-benefit, payback period, and IRR analyses to evaluate each location’s potential for long-term growth and healthcare service delivery. The project emphasizes CVS’s vertically integrated model, data-driven decision-making, and investment in digital infrastructure and accessible care through retail pharmacies and Minute Clinics.</p>
+                    <p><strong>My Role:</strong> [Describe your role. E.g., Conducted financial modeling including NPV, IRR, and payback period for each proposed location; Performed comparative site analysis and data collection from SEC filings.]</p>
+                    <p><strong>Key Technologies & Tools:</strong> Microsoft Excel / Financial Modeling Tools (NPV, IRR, Payback Period, DCF), Data from SEC Filings and CVS Investor Reports, Discounted Cash Flow (DCF) Analysis, Comparative Site Analysis, Strategic Location Scoring Framework, Public Healthcare Market Data & Projections, Scenario Forecasting.</p>
+                    <p><strong>Impact & Learning:</strong> [Describe impact/learning. E.g., Gained practical experience in comprehensive financial analysis and investment appraisal for large-scale projects, enhancing skills in data-driven strategic decision-making.]</p>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Modal for MIE670 Parking Lot Redesign -->
+        <div class="modal" id="modal-parking-lot">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>MIE670: Redesign of Parking Lot 12 (UMass Amherst)</h2>
+                <img src="placeholder-parking-large.jpg" alt="Parking Lot Redesign Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Project Description:</strong> The MIE670 Final Project proposes the redesign of Parking Lot 12 at UMass Amherst to solve existing parking inefficiencies caused by poor infrastructure. The project focuses on paving and surfacing the lot, organizing parking spaces, managing traffic flow, implementing QR code access controls, and adding sustainable features like EV charging stations and greenery. Scheduled over 51 working days with a total estimated cost of $2.5 million, the project includes a detailed work breakdown, risk management plan, critical path analysis, and schedule recovery strategies to ensure successful and timely completion.</p>
+                    <p><strong>My Role:</strong> [Describe your role. E.g., Contributed to the data analysis of parking inefficiencies using Python and statistical methods; Involved in developing the work breakdown structure and risk management plan.]</p>
+                    <p><strong>Key Technologies & Tools (for data analysis portion):</strong> Python (for data preprocessing, statistical analysis, visualization), Pandas (data cleaning/manipulation), Matplotlib, Seaborn, SciPy/Statsmodels (Chi-square tests), Jupyter Notebook. (Overall project also involved project management principles.)</p>
+                    <p><strong>Impact & Learning:</strong> [Describe impact/learning. E.g., Applied data analysis skills to identify real-world operational inefficiencies and contributed to a comprehensive project plan for infrastructure improvement. Gained insights into project scheduling, cost estimation, and risk management for engineering projects.]</p>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Modal for ELE Meduverse -->
+        <div class="modal" id="modal-meduverse">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>ELE: Meduverse – AR Educational Platform</h2>
+                <img src="placeholder-meduverse-large.jpg" alt="Meduverse AR Platform Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Project Description:</strong> Meduverse is an augmented reality (AR) educational platform designed to transform medical training. It provides high-fidelity 3D models, real-time feedback, and self-paced learning modules to help medical students and professionals master anatomy and clinical procedures more effectively. Targeting medical schools, nursing programs, and hospitals, Meduverse aims to bridge the technological gaps in traditional education. Backed by a strong business plan, scalability strategy, and customer discovery feedback, the platform is positioned to revolutionize healthcare education by making high-quality, immersive training accessible worldwide.</p>
+                    <p><strong>My Role:</strong> [Describe your role. E.g., Led the development of the business plan and scalability strategy; Conducted customer discovery interviews to validate product-market fit; Defined key features for the AR platform based on user needs.]</p>
+                    <p><strong>Key Technologies & Concepts:</strong> Augmented Reality (AR), 3D Modeling Software (conceptual), Real-Time Feedback Systems (conceptual), AR Development Platforms (Unity/AR Foundation/Vuforia concepts), Cloud Hosting Services (AWS/Azure concepts), CMS, Cross-Platform Mobile Development concepts, Business Planning, Customer Discovery.</p>
+                    <p><strong>Impact & Learning:</strong> [Describe impact/learning. E.g., Developed a strategic business plan for an innovative AR-based educational product, gaining experience in emerging technologies, market validation, and go-to-market strategy for tech startups.]</p>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Modal for Online Purchase Descriptive Analysis -->
+        <div class="modal" id="modal-online-purchase">
+            <div class="modal-content">
+                <span class="close-button" tabindex="0" aria-label="Close modal">×</span>
+                <h2>Descriptive Analysis: Online Purchase Decisions</h2>
+                <img src="placeholder-ecommerce-large.jpg" alt="Online Shopping Analysis Detail" class="modal-img">
+                <div class="modal-body">
+                    <p><strong>Project Description:</strong> This study analyzes how session duration and shopping days (weekdays vs weekends) influence online purchase decisions. Using data from 12,330 online sessions, results show that longer browsing times (>10 minutes) significantly increase the likelihood of purchase, and weekend shopping leads to slightly higher conversion rates compared to weekdays. These findings offer important insights for improving e-commerce marketing strategies and enhancing customer engagement.</p>
+                    <p><strong>My Role:</strong> [Describe your role. E.g., Performed end-to-end data analysis, from cleaning and preprocessing to statistical testing and visualization; Interpreted results to derive actionable insights for e-commerce.]</p>
+                    <p><strong>Key Technologies & Tools:</strong> Python, Pandas, Matplotlib, Seaborn, SciPy/Statsmodels (Chi-square analysis), Jupyter Notebook, UCI Machine Learning Repository Dataset.</p>
+                    <p><strong>Impact & Learning:</strong> [Describe impact/learning. E.g., Successfully applied statistical analysis techniques to uncover key drivers of online purchasing behavior, providing actionable insights for e-commerce optimization. Strengthened skills in data interpretation and communication of findings.]</p>
+                 </div>
+            </div>
+        </div>
+        <!-- === END MODALS === -->
 
         <section id="experience" class="content-section">
             <h2>Industry Experience</h2>
@@ -247,18 +375,15 @@
             </div>
         </section>
 
-        <section id="publication-link" class="content-section"> <!-- Anchor point for publication link in modal -->
+        <section id="publication-link" class="content-section">
              <h2>Publication</h2>
              <div class="publication-item">
                 <p>"Enhancing Automatic Vehicle Number Plate Recognition Systems: A Multidimensional Approach to Improve Efficiency and Applicability" – IN IJARSCT, VOLUME 4, ISSUE 5, MAY 2024</p>
-                <!-- Optional: Add a direct link if available online -->
-                <!-- <a href="[Link to Publication]" target="_blank" rel="noopener noreferrer">Read Publication</a> -->
             </div>
         </section>
-
     </main>
 
-    <footer> <!-- Footer -->
+    <footer>
         <p>Made with <i class="fas fa-heart" style="color: #e44d26;"></i> by Kunal Santosh Pingale</p>
         <p><a href="#">Back to Top</a></p>
     </footer>

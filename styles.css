@@ -127,6 +127,8 @@ li {
 
 .hero-text-content {
     flex-grow: 1;
+    padding-top: 20px;    /* Adjust this value as needed */
+    padding-bottom: 20px;
 }
 
 .hero-text-content h1 {

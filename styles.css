@@ -796,29 +796,37 @@ html[data-theme="dark"] #bg-blobs span {
 
 
 
-/* Push theme toggle to far right of nav */
+/* Nav layout with theme toggle pinned right */
 .main-nav {
     position: sticky;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 0;
+    z-index: 900;
+    padding: 15px 30px;
 }
 
 .main-nav ul {
     display: flex;
     align-items: center;
-    gap: 0;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .main-nav ul li:last-child {
     position: absolute;
-    right: 30px;
+    right: 0;
     margin: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+    .main-nav ul {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
     .main-nav ul li:last-child {
         position: static;
-        margin: 0 8px;
     }
 }

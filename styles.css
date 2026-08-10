@@ -790,3 +790,35 @@ html[data-theme="dark"] #bg-blobs span {
     opacity: 0.85;
     color: #fff;
 }
+
+
+
+
+
+
+/* Push theme toggle to far right of nav */
+.main-nav {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.main-nav ul li:last-child {
+    position: absolute;
+    right: 30px;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .main-nav ul li:last-child {
+        position: static;
+        margin: 0 8px;
+    }
+}

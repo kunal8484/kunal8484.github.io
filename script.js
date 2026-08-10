@@ -1,152 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // --- Modal Handling Logic ---
-    const projectCards = document.querySelectorAll(".project-card");
-    const modals = document.querySelectorAll(".modal");
-    const closeButtons = document.querySelectorAll(".close-button");
-    const body = document.body;
-
-    // Function to open a modal
-    function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = "block";
-            body.style.overflow = 'hidden'; // Prevent background scrolling
-            // Focus management (optional but good for accessibility)
-            const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            // Find first focusable element, typically the close button or title link
-            const firstElement = modal.querySelector('.close-button') || (focusableElements.length > 0 ? focusableElements[0] : null);
-            if(firstElement) {
-                firstElement.focus();
-            }
-
-        } else {
-            console.error("Modal with ID: " + modalId + " not found.");
-        }
-    }
-
-    // Function to close a modal
-    function closeModal(modal) {
-        if (modal) {
-            modal.style.display = "none";
-            body.style.overflow = 'auto'; // Restore background scrolling
-        }
-    }
-
-    // Add click listener to each project card
-    projectCards.forEach(card => {
-        card.addEventListener("click", () => {
-            const modalId = card.getAttribute("data-modal-target");
-            if (modalId) {
-                openModal(modalId);
-            } else {
-                console.error("Project card is missing data-modal-target attribute:", card);
-            }
-        });
-        // Add keyboard accessibility (Enter key)
-        card.addEventListener("keydown", (event) => {
-             if (event.key === 'Enter' || event.key === ' ') { // Also allow spacebar
-                  event.preventDefault(); // Prevent page scrolling on spacebar
-                  const modalId = card.getAttribute("data-modal-target");
-                  if (modalId) {
-                      openModal(modalId);
-                  }
-             }
-        });
-        // Make card focusable if it wasn't already via tabindex="0" in HTML
-        if (!card.hasAttribute('tabindex')) {
-             card.setAttribute('tabindex', '0');
-        }
-    });
-
-
-    // Add click listener to each close button
-    closeButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const modal = button.closest(".modal");
-            closeModal(modal);
-        });
-         // Add keyboard accessibility (Enter/Space key) for close button
-         button.addEventListener("keydown", (event) => {
-             if (event.key === 'Enter' || event.key === ' ') {
-                 event.preventDefault();
-                 const modal = button.closest(".modal");
-                 closeModal(modal);
-             }
-         });
-    });
-
-    // Add click listener to modal background (to close modal)
-    modals.forEach(modal => {
-        modal.addEventListener("click", (event) => {
-            if (event.target === modal) { // Check if the click is directly on the modal overlay
-                closeModal(modal);
-            }
-        });
-    });
-
-    // Close modal with the Escape key
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            const openModal = document.querySelector('.modal[style*="display: block"]'); // Find the currently open modal
-            if (openModal) {
-                closeModal(openModal);
-            }
-        }
-    });
-
-
-    // --- Smooth Scrolling Logic ---
-    const navLinks = document.querySelectorAll('.main-nav a[href^="#"]'); // Select only internal nav links
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                 e.preventDefault(); // Prevent default jump only if target exists
-
-                // Calculate scroll position, accounting for sticky nav height
-                const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0; // Get nav height or default to 0
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navHeight - 15; // Add a little extra offset (15px)
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-
-            } else {
-                 console.warn("Smooth scroll target not found:", targetId);
-            }
-        });
-    });
-
-     // --- Back to Top Link Smooth Scroll ---
-     const backToTopLink = document.querySelector('footer a[href="#"]');
-     if (backToTopLink) {
-          backToTopLink.addEventListener('click', function(e) {
-               e.preventDefault();
-               window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-               });
-          });
-     }
-
-
-}); // End of DOMContentLoaded listener
-
-// ===== DARK / LIGHT MODE =====
-document.addEventListener('DOMContentLoaded', function () {
+    /* =========================================================
+       THEME TOGGLE (LIGHT / DARK)
+       ========================================================= */
     const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
 
-        themeToggle.addEventListener('click', function () {
+    if (themeToggle) {
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        themeToggle.addEventListener('click', () => {
             const current = document.documentElement.getAttribute('data-theme');
             const next = current === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', next);
@@ -155,90 +18,212 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== ELEVATOR BACK-TO-TOP =====
+
+    /* =========================================================
+       MODAL HANDLING
+       ========================================================= */
+    const projectCards = document.querySelectorAll(".project-card");
+    const modals = document.querySelectorAll(".modal");
+    const closeButtons = document.querySelectorAll(".close-button");
+    const body = document.body;
+
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = "block";
+            body.style.overflow = 'hidden';
+            const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const firstElement = modal.querySelector('.close-button') || (focusable.length > 0 ? focusable[0] : null);
+            if (firstElement) firstElement.focus();
+        } else {
+            console.error("Modal with ID: " + modalId + " not found.");
+        }
+    }
+
+    function closeModal(modal) {
+        if (modal) {
+            modal.style.display = "none";
+            body.style.overflow = 'auto';
+        }
+    }
+
+    projectCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const modalId = card.getAttribute("data-modal-target");
+            if (modalId) openModal(modalId);
+        });
+        card.addEventListener("keydown", (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                const modalId = card.getAttribute("data-modal-target");
+                if (modalId) openModal(modalId);
+            }
+        });
+        if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener("click", () => closeModal(button.closest(".modal")));
+        button.addEventListener("keydown", (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                closeModal(button.closest(".modal"));
+            }
+        });
+    });
+
+    modals.forEach(modal => {
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) closeModal(modal);
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            const open = document.querySelector('.modal[style*="display: block"]');
+            if (open) closeModal(open);
+        }
+    });
+
+
+    /* =========================================================
+       SMOOTH SCROLLING FOR NAV LINKS
+       ========================================================= */
+    const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                e.preventDefault();
+                const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight - 15;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        });
+    });
+
+
+    /* =========================================================
+       ELEVATOR BACK-TO-TOP
+       ========================================================= */
     const backToTopBtn = document.getElementById('back-to-top');
     const overlay = document.getElementById('elevator-overlay');
-    const floorDisplay = document.getElementById('elevator-floor');
 
-    if (backToTopBtn && overlay && floorDisplay) {
-        function playElevatorSound() {
-            const AudioCtx = window.AudioContext || window.webkitAudioContext;
-            if (!AudioCtx) return null;
-            const audioCtx = new AudioCtx();
+    if (backToTopBtn && overlay) {
 
-            const osc1 = audioCtx.createOscillator();
-            const osc2 = audioCtx.createOscillator();
+        let audioCtx = null;
+        let isRiding = false;
+
+        function makeNote(freq, startAt, duration, volume, type) {
+            const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-
-            osc1.type = 'sine';
-            osc1.frequency.value = 220;
-            osc2.type = 'sine';
-            osc2.frequency.value = 225;
-
-            gain.gain.value = 0.03;
-            osc1.connect(gain);
-            osc2.connect(gain);
+            osc.type = type || 'sine';
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0.0001, startAt);
+            gain.gain.linearRampToValueAtTime(volume, startAt + 0.06);
+            gain.gain.linearRampToValueAtTime(0.0001, startAt + duration);
+            osc.connect(gain);
             gain.connect(audioCtx.destination);
-
-            osc1.start();
-            osc2.start();
-
-            return { audioCtx, osc1, osc2, gain };
+            osc.start(startAt);
+            osc.stop(startAt + duration + 0.05);
         }
 
-        function playBellDing(audioCtx) {
+        function startElevatorMusic(totalSeconds) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) return;
+            audioCtx = new AudioCtx();
+
+            // Gentle major-key lounge melody (C major)
+            const melody = [
+                523.25, 659.25, 587.33, 523.25,   // C5  E5  D5  C5
+                493.88, 523.25, 587.33, 659.25,   // B4  C5  D5  E5
+                698.46, 659.25, 587.33, 523.25,   // F5  E5  D5  C5
+                493.88, 440.00, 493.88, 523.25    // B4  A4  B4  C5
+            ];
+            const bassLine = [130.81, 196.00, 174.61, 164.81]; // C3 G3 F3 E3
+
+            const noteLen = 0.42;
+            const barLen = melody.length * noteLen;
+            const loops = Math.ceil(totalSeconds / barLen) + 1;
+            const start = audioCtx.currentTime + 0.05;
+
+            for (let loop = 0; loop < loops; loop++) {
+                const loopStart = start + loop * barLen;
+                melody.forEach((freq, i) => {
+                    makeNote(freq, loopStart + i * noteLen, noteLen * 0.85, 0.07, 'sine');
+                });
+                bassLine.forEach((freq, i) => {
+                    makeNote(freq, loopStart + i * noteLen * 4, noteLen * 3.6, 0.05, 'triangle');
+                });
+            }
+        }
+
+        function playArrivalBell() {
+            if (!audioCtx) return;
             const now = audioCtx.currentTime;
-            [880, 1320].forEach(function (freq) {
+            [1046.50, 1396.91].forEach((freq, i) => {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
                 osc.frequency.value = freq;
-                gain.gain.setValueAtTime(0.15, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+                const startAt = now + i * 0.16;
+                gain.gain.setValueAtTime(0.22, startAt);
+                gain.gain.exponentialRampToValueAtTime(0.0005, startAt + 1.6);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
-                osc.start(now);
-                osc.stop(now + 1.2);
+                osc.start(startAt);
+                osc.stop(startAt + 1.7);
             });
         }
 
         backToTopBtn.addEventListener('click', function (e) {
             e.preventDefault();
+            if (isRiding) return;
 
-            const startY = window.scrollY;
-            const duration = Math.min(4000, Math.max(1800, startY * 1.2));
+            const startY = window.scrollY || window.pageYOffset;
+            if (startY < 60) return; // already at the top
+
+            isRiding = true;
+
+            const duration = Math.min(5000, Math.max(2200, startY * 1.1));
             const startTime = performance.now();
 
             overlay.classList.add('active');
-            const sound = playElevatorSound();
+            startElevatorMusic(duration / 1000);
 
-            function animateScroll(now) {
+            function step(now) {
                 const elapsed = now - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
+                const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
 
-                window.scrollTo(0, startY * (1 - eased));
-
-                const floorsTotal = 5;
-                const currentFloor = Math.max(1, Math.ceil(floorsTotal * (1 - eased)));
-                floorDisplay.textContent = progress < 1 ? currentFloor : 'L';
+                window.scrollTo(0, Math.round(startY * (1 - eased)));
 
                 if (progress < 1) {
-                    requestAnimationFrame(animateScroll);
+                    requestAnimationFrame(step);
                 } else {
-                    if (sound) {
-                        sound.osc1.stop();
-                        sound.osc2.stop();
-                        playBellDing(sound.audioCtx);
-                    }
-                    setTimeout(function () {
+                    window.scrollTo(0, 0);
+                    playArrivalBell();
+
+                    setTimeout(() => {
                         overlay.classList.remove('active');
-                        if (sound) sound.audioCtx.close();
-                    }, 1300);
+                        setTimeout(() => {
+                            if (audioCtx) {
+                                audioCtx.close();
+                                audioCtx = null;
+                            }
+                            isRiding = false;
+                        }, 1800);
+                    }, 700);
                 }
             }
 
-            requestAnimationFrame(animateScroll);
+            requestAnimationFrame(step);
         });
     }
+
 });

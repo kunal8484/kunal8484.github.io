@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const backToTopBtn = document.getElementById('back-to-top');
     const overlay = document.getElementById('elevator-overlay');
 
-    if (backToTopBtn && overlay) {
+    if (backToTopBtn) {
 
         let audioCtx = null;
         let isRiding = false;
@@ -182,48 +182,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         backToTopBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            if (isRiding) return;
+    e.preventDefault();
+    if (isRiding) return;
 
-            const startY = window.scrollY || window.pageYOffset;
-            if (startY < 60) return; // already at the top
+    const startY = window.scrollY || window.pageYOffset;
+    if (startY < 60) return; // already at the top
 
-            isRiding = true;
+    isRiding = true;
 
-            const duration = Math.min(2200, Math.max(1200, startY * 0.45));
-            const startTime = performance.now();
+    const duration = Math.min(2200, Math.max(1200, startY * 0.45));
+    const startTime = performance.now();
 
-            overlay.classList.add('active');
-            startElevatorMusic(duration / 1000);
+    startElevatorMusic(duration / 1000);
 
-            function step(now) {
-                const elapsed = now - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    function step(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
 
-                window.scrollTo(0, Math.round(startY * (1 - eased)));
+        window.scrollTo(0, Math.round(startY * (1 - eased)));
 
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    window.scrollTo(0, 0);
-                    playArrivalBell();
-
-                    setTimeout(() => {
-                        overlay.classList.remove('active');
-                        setTimeout(() => {
-                            if (audioCtx) {
-                                audioCtx.close();
-                                audioCtx = null;
-                            }
-                            isRiding = false;
-                        }, 1800);
-                    }, 700);
-                }
-            }
-
+        if (progress < 1) {
             requestAnimationFrame(step);
-        });
+        } else {
+            window.scrollTo(0, 0);
+            playArrivalBell();
+            setTimeout(() => {
+                if (audioCtx) {
+                    audioCtx.close();
+                    audioCtx = null;
+                }
+                isRiding = false;
+            }, 1800);
+        }
+    }
+
+    requestAnimationFrame(step);
+});
     }
 
 });

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =========================================================
        MODAL HANDLING
        ========================================================= */
-    const projectCards = document.querySelectorAll(".project-card");
+    const projectCards = document.querySelectorAll(".project-card:not(.cs-card)");
     const modals = document.querySelectorAll(".modal");
     const closeButtons = document.querySelectorAll(".close-button");
     const body = document.body;
@@ -220,5 +220,43 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(step);
 });
     }
+/* =========================================================
+       CASE STUDIES — CARD ↔ DETAIL SWITCHING
+       ========================================================= */
+    const csList = document.getElementById('cs-list');
+    const csCards = document.querySelectorAll('.cs-card');
+    const csBackButtons = document.querySelectorAll('.cs-back');
+
+    function showCaseStudy(targetId) {
+        const detail = document.getElementById(targetId);
+        if (!detail || !csList) return;
+        csList.style.display = 'none';
+        document.querySelectorAll('.cs-detail').forEach(d => d.classList.remove('active'));
+        detail.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showCaseStudyList() {
+        if (!csList) return;
+        document.querySelectorAll('.cs-detail').forEach(d => d.classList.remove('active'));
+        csList.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    csCards.forEach(card => {
+        card.addEventListener('click', () => {
+            showCaseStudy(card.getAttribute('data-cs-target'));
+        });
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                showCaseStudy(card.getAttribute('data-cs-target'));
+            }
+        });
+    });
+
+    csBackButtons.forEach(btn => {
+        btn.addEventListener('click', showCaseStudyList);
+    });
 
 });

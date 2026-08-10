@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ];
             const bassLine = [130.81, 196.00, 174.61, 164.81]; // C3 G3 F3 E3
 
-            const noteLen = 0.42;
+            const noteLen = 0.28;
             const barLen = melody.length * noteLen;
             const loops = Math.ceil(totalSeconds / barLen) + 1;
             const start = audioCtx.currentTime + 0.05;
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             isRiding = true;
 
-            const duration = Math.min(5000, Math.max(2200, startY * 1.1));
+            const duration = Math.min(2200, Math.max(1200, startY * 0.45));
             const startTime = performance.now();
 
             overlay.classList.add('active');

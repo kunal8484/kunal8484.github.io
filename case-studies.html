@@ -22,7 +22,7 @@
     <header class="cs-hero">
         <div class="cs-hero-inner">
             <h1>Case Studies</h1>
-            <p class="tagline">Self-directed product work — from problem definition through research, prioritisation, and execution planning.</p>
+            <p class="tagline">Self-directed product work from problem definition through research, prioritisation, and execution planning.</p>
         </div>
     </header>
 
@@ -48,13 +48,13 @@
             <h2>Who's Really Watching? Fixing Instagram's Story Replay Blind Spot</h2>
 
             <h3>Summary</h3>
-            <p>Instagram Pro users can't see who specifically rewatched their story — they only see a total replay count. On top of that, viewer data disappears after 48 hours, so even the limited data that exists doesn't stick around long enough to act on. I surveyed 8 people and confirmed both problems, though I also learned that half of respondents rarely or never check story insights at all.</p>
-            <p>I compared 4 possible fixes using RICE scoring. One idea scored slightly higher on paper, but I chose a different one — a new "Top Repeat Viewers" section with a longer 30-day data window — because it's backed by real complaints from the survey, not just a guess. The fix was broken into 10 tasks across two planned sprints.</p>
+            <p>Instagram Pro users can't see who specifically rewatched their story they only see a total replay count. On top of that, viewer data disappears after 48 hours, so even the limited data that exists doesn't stick around long enough to act on. I surveyed 8 people and confirmed both problems, though I also learned that half of respondents rarely or never check story insights at all.</p>
+            <p>I compared 4 possible fixes using RICE scoring. One idea scored slightly higher on paper, but I chose a different one a new "Top Repeat Viewers" section with a longer 30-day data window because it's backed by real complaints from the survey, not just a guess. The fix was broken into 10 tasks across two planned sprints.</p>
 
             <h3>Problem definition</h3>
-            <p><strong>What's broken:</strong> Instagram's Professional Dashboard shows aggregate story replay counts, but gives no breakdown of who rewatched a story or how many times each viewer replayed it. A story replayed 340 times by 340 different people looks identical in the data to one replayed 34 times by 10 highly engaged viewers — even though these represent very different levels of interest.</p>
+            <p><strong>What's broken:</strong> Instagram's Professional Dashboard shows aggregate story replay counts, but gives no breakdown of who rewatched a story or how many times each viewer replayed it. A story replayed 340 times by 340 different people looks identical in the data to one replayed 34 times by 10 highly engaged viewers even though these represent very different levels of interest.</p>
             <p><strong>Who it affects:</strong> Creators and small businesses using Instagram Pro who rely on story insights to gauge audience interest and identify high-intent followers. Especially relevant for small businesses using Instagram as a sales channel, where a repeat viewer often signals a warmer lead.</p>
-            <p><strong>Why it matters:</strong> Replay behaviour is one of the strongest passive engagement signals Instagram already collects — a user doesn't replay a story by accident. Surfacing who is repeatedly engaging would let businesses act on interest signals they're currently blind to.</p>
+            <p><strong>Why it matters:</strong> Replay behaviour is one of the strongest passive engagement signals Instagram already collects a user doesn't replay a story by accident. Surfacing who is repeatedly engaging would let businesses act on interest signals they're currently blind to.</p>
 
             <h3>Research findings</h3>
             <p>I surveyed 8 Instagram users to test the hypothesis. Key results:</p>
@@ -63,8 +63,8 @@
                 <li>50% have wondered "who specifically" rewatched their story at least sometimes</li>
                 <li>25% said knowing individual repeat viewers would definitely change how they use the app; another 37.5% said maybe</li>
             </ul>
-            <p>Two themes emerged from the open responses. The first confirmed the original hypothesis — <em>"Cannot find who is rewatching the story multiple times"</em> — though only one respondent raised it unprompted. The second was stronger and unprompted: <em>"The list of people who viewed the stories vanish after 48 hours."</em></p>
-            <p><strong>Decision:</strong> rather than treating these as separate problems, I scoped the fix to address both — adding per-viewer visibility and extending the retention window — since the research suggested they're connected symptoms of the same underlying need.</p>
+            <p>Two themes emerged from the open responses. The first confirmed the original hypothesis — <em>"Cannot find who is rewatching the story multiple times"</em> though only one respondent raised it unprompted. The second was stronger and unprompted: <em>"The list of people who viewed the stories vanish after 48 hours."</em></p>
+            <p><strong>Decision:</strong> rather than treating these as separate problems, I scoped the fix to address both — adding per-viewer visibility and extending the retention window since the research suggested they're connected symptoms of the same underlying need.</p>
 
             <h3>Prioritisation</h3>
             <table class="cs-table">
@@ -78,7 +78,7 @@
                     <tr><td>Weekly digest email</td><td>7</td><td>2</td><td>50%</td><td>5</td><td>1.40</td></tr>
                 </tbody>
             </table>
-            <p>The weekly digest scored marginally highest, but its confidence was low — no respondent actually requested it. I chose the Top Repeat Viewers section instead: slightly lower score, but directly supported by two real complaints rather than speculation.</p>
+            <p>The weekly digest scored marginally highest, but its confidence was low no respondent actually requested it. I chose the Top Repeat Viewers section instead: slightly lower score, but directly supported by two real complaints rather than speculation.</p>
 
             <h3>Execution plan</h3>
             <p><strong>Dependencies:</strong> the backend retention changes need to land before the analytics events can be meaningfully tested — there's no point measuring usage of a feature with no real data behind it. Design work can run in parallel.</p>

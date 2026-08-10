@@ -137,3 +137,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 }); // End of DOMContentLoaded listener
+
+// ===== DARK / LIGHT MODE =====
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', function () {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+    }
+
+    // ===== ELEVATOR BACK-TO-TOP =====
+    const backToTopBtn = document.getElementById('back-to-top');
+    const overlay = document.getElementById('elevator-overlay');
+    const floorDisplay = document.getElementById('elevator-floor');
+
+    if (backToTopBtn && overlay && floorDisplay) {
+        function playElevatorSound() {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) return null;
+            const audioCtx = new AudioCtx();
+
+            const osc1 = audioCtx.createOscillator();
+            const osc2 = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc1.type = 'sine';
+            osc1.frequency.value = 220;
+            osc2.type = 'sine';
+            osc2.frequency.value = 225;
+
+            gain.gain.value = 0.03;
+            osc1.connect(gain);
+            osc2.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc1.start();
+            osc2.start();
+
+            return { audioCtx, osc1, osc2, gain };
+        }
+
+        function playBellDing(audioCtx) {
+            const now = audioCtx.currentTime;
+            [880, 1320].forEach(function (freq) {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 1.2);
+            });
+        }
+
+        backToTopBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const startY = window.scrollY;
+            const duration = Math.min(4000, Math.max(1800, startY * 1.2));
+            const startTime = performance.now();
+
+            overlay.classList.add('active');
+            const sound = playElevatorSound();
+
+            function animateScroll(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+
+                window.scrollTo(0, startY * (1 - eased));
+
+                const floorsTotal = 5;
+                const currentFloor = Math.max(1, Math.ceil(floorsTotal * (1 - eased)));
+                floorDisplay.textContent = progress < 1 ? currentFloor : 'L';
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateScroll);
+                } else {
+                    if (sound) {
+                        sound.osc1.stop();
+                        sound.osc2.stop();
+                        playBellDing(sound.audioCtx);
+                    }
+                    setTimeout(function () {
+                        overlay.classList.remove('active');
+                        if (sound) sound.audioCtx.close();
+                    }, 1300);
+                }
+            }
+
+            requestAnimationFrame(animateScroll);
+        });
+    }
+});

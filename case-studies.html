@@ -46,62 +46,30 @@
         <section id="cs-instagram" class="content-section cs-detail">
             <button class="cs-back">Back to case studies</button>
 
-            <h2>Who's Really Watching? Fixing Instagram's Story Replay Blind Spot</h2>
+           <h2>Who's Really Watching? Fixing Instagram's Story Replay Blind Spot</h2>
 
             <img src="assets/images/ig-pro.png" alt="Instagram Story Insights" class="modal-img">
 
-            <p><a href="assets/pdfs/instagram-case-study.pdf" target="_blank" rel="noopener noreferrer" class="cs-pdf-btn">Download full case study (PDF)</a></p>
+            <p><a href="assets/pdfs/instagram-case-study.pdf" target="_blank" rel="noopener noreferrer" class="cs-pdf-btn">Read the full case study (PDF)</a></p>
 
-            <h3>Summary</h3>
-            <p>Instagram Pro users can't see who specifically rewatched their story, only a total replay count. On top of that, viewer data disappears after 48 hours, so even the limited data that exists doesn't stick around long enough to act on. I surveyed 8 people and confirmed both problems, though I also learned that half of respondents rarely or never check story insights at all.</p>
-            <p>I compared 4 possible fixes using RICE scoring. One idea scored slightly higher on paper, but I chose a different one, a new "Top Repeat Viewers" section with a longer 30-day data window, because it's backed by real complaints from the survey rather than a guess. The fix was broken into 10 tasks across two planned sprints.</p>
+            <h3>The problem</h3>
+            <p>Instagram Pro shows creators a total story replay count, but never who rewatched or how often. A story replayed 340 times by 340 people looks identical to one replayed 34 times by 10 highly engaged viewers, even though those signal completely different levels of interest. On top of that, the viewer data disappears after 48 hours.</p>
 
-            <h3>Problem definition</h3>
-            <p><strong>What's broken:</strong> Instagram's Professional Dashboard shows aggregate story replay counts, but gives no breakdown of who rewatched a story or how many times each viewer replayed it. A story replayed 340 times by 340 different people looks identical in the data to one replayed 34 times by 10 highly engaged viewers, even though these represent very different levels of interest.</p>
-            <p><strong>Who it affects:</strong> Creators and small businesses using Instagram Pro who rely on story insights to gauge audience interest and identify high-intent followers. Especially relevant for small businesses using Instagram as a sales channel, where a repeat viewer often signals a warmer lead.</p>
-            <p><strong>Why it matters:</strong> Replay behaviour is one of the strongest passive engagement signals Instagram already collects, since a user doesn't replay a story by accident. Surfacing who is repeatedly engaging would let businesses act on interest signals they're currently blind to.</p>
-
-            <h3>Research findings</h3>
-            <p>I surveyed 8 Instagram users to test the hypothesis. Key results:</p>
+            <h3>What I did</h3>
             <ul>
-                <li>50% rarely or never check story insights; 12.5% didn't know the feature existed</li>
-                <li>50% have wondered "who specifically" rewatched their story at least sometimes</li>
-                <li>25% said knowing individual repeat viewers would definitely change how they use the app; another 37.5% said maybe</li>
-            </ul>
-            <p>Two themes emerged from the open responses. The first confirmed the original hypothesis, <em>"Cannot find who is rewatching the story multiple times"</em>, though only one respondent raised it unprompted. The second was stronger and unprompted: <em>"The list of people who viewed the stories vanish after 48 hours."</em></p>
-            <p><strong>Decision:</strong> rather than treating these as separate problems, I scoped the fix to address both, adding per-viewer visibility and extending the retention window, since the research suggested they're connected symptoms of the same underlying need.</p>
-
-            <h3>Prioritisation</h3>
-            <table class="cs-table">
-                <thead>
-                    <tr><th>Fix</th><th>R</th><th>I</th><th>C</th><th>E</th><th>Score</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Per-viewer replay badge</td><td>5</td><td>1</td><td>70%</td><td>3</td><td>1.17</td></tr>
-                    <tr><td>Top Repeat Viewers + 30-day retention</td><td>6</td><td>2</td><td>80%</td><td>7</td><td>1.37</td></tr>
-                    <tr><td>Extend retention only</td><td>6</td><td>1</td><td>90%</td><td>6</td><td>0.90</td></tr>
-                    <tr><td>Weekly digest email</td><td>7</td><td>2</td><td>50%</td><td>5</td><td>1.40</td></tr>
-                </tbody>
-            </table>
-            <p>The weekly digest scored marginally highest, but its confidence was low since no respondent actually requested it. I chose the Top Repeat Viewers section instead: slightly lower score, but directly supported by two real complaints rather than speculation.</p>
-
-            <h3>Execution plan</h3>
-            <p><strong>Dependencies:</strong> the backend retention changes need to land before the analytics events can be meaningfully tested, since there's no point measuring usage of a feature with no real data behind it. Design work can run in parallel.</p>
-            <ul>
-                <li>Week 1: design the section layout, define ranking logic, extend retention policy, design the empty state</li>
-                <li>Week 2: update backend storage for 30-day retention</li>
-                <li>Week 3: add analytics tracking, write tooltip copy</li>
-                <li>Week 4: QA, build the post-launch tracking dashboard, launch</li>
+                <li>Surveyed 8 Instagram users to test the hypothesis and surface unprompted pain points</li>
+                <li>Used AI-assisted synthesis to group the responses into themes, then reviewed and corrected the output</li>
+                <li>Scored 4 candidate fixes with RICE and documented the reasoning behind each</li>
+                <li>Broke the chosen fix into 10 Jira stories across two sprints, with a timeline and risk plan</li>
             </ul>
 
-            <h3>Risks</h3>
-            <ul>
-                <li>Tracking individual viewers this closely might feel invasive, so only show the data to the account owner and never notify the person being tracked</li>
-                <li>Longer retention costs more to store, so start at 30 days, monitor cost, and adjust</li>
-                <li>People might not notice the feature, so ship the in-app tooltip alongside it rather than after</li>
-                <li>Only 8 survey responses, so real behaviour could differ. Track actual usage post-launch and be ready to change course</li>
-                <li>Backend retention work was probably estimated optimistically, so flag it early as the riskiest task and check with engineering before locking the schedule</li>
-            </ul>
+            <h3>The interesting decision</h3>
+            <p>A weekly digest email scored highest on RICE (1.40), but its confidence was only 50% because nobody had actually asked for it. The "Top Repeat Viewers" section scored 1.37, but was backed by two real complaints from the survey. I chose the lower-scoring option and wrote up why: I'd rather build something I know solves a real problem than chase a marginally better score built on a guess.</p>
+
+            <h3>What the research changed</h3>
+            <p>My original hypothesis was only raised unprompted by one of eight respondents. A different complaint came up stronger and unprompted: the viewer list vanishing after 48 hours. Rather than pick one, I scoped the fix to address both, since they're symptoms of the same underlying need. Half the respondents also said they rarely or never check story insights at all, which is a real limitation worth naming.</p>
+
+            <p><strong>Full problem definition, RICE table, execution plan, and risk register are in the PDF.</strong></p>
 
             <button class="cs-back">Back to case studies</button>
         </section>
